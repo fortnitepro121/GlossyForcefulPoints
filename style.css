@@ -1,4 +1,257 @@
-html {
-  height: 100%;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, and nav will be centered */
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #242424;
+  border-bottom: 1px solid #333;
+}
+
+.logo img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+nav {
+  flex-grow: 1; /* Allows nav to take up available space */
+  display: flex;
+  justify-content: center; /* Centers the ul within the nav */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #7289DA; /* Discord blue */
+  transition: width 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+nav ul li a.active::after,
+nav ul li a:hover::after {
   width: 100%;
+}
+
+main {
+  padding: 20px 60px; /* Reduced top padding from 40px to 20px */
+  flex-grow: 1;
+}
+
+/* --- Content Section Management --- */
+.content-section {
+  display: none; /* Hidden by default */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.content-section.active {
+  display: block; /* Show when active */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* --- Commands Section Styles --- */
+.commands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px; /* Reduced from 30px to 15px */
+}
+
+.commands-header h1 {
+  font-size: 2.5em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.search-bar {
+  position: relative;
+  width: 300px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #e0e0e0;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.search-bar input::placeholder {
+  color: #888;
+}
+
+.search-bar .fas.fa-search {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px; /* Reduced from 40px to 25px */
+}
+
+.category-pill {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  color: #b0b0b0;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.category-pill:hover {
+  background-color: #3a3a3a;
+  border-color: #555;
+  color: #ffffff;
+}
+
+.category-pill.active {
+  background-color: #5865F2; /* Discord blue */
+  border-color: #5865F2;
+  color: #ffffff;
+}
+
+.category-pill .count {
+  background-color: #444;
+  color: #e0e0e0;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+.category-pill.active .count {
+  background-color: #4752C4;
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.command-card {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden; /* For the copy icon positioning */
+}
+
+.command-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.command-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.command-card .copy-icon {
+  color: #b0b0b0;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: color 0.2s ease;
+  position: absolute; /* Position relative to the card */
+  top: 15px;
+  right: 15px;
+  background-color: #3a3a3a;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.command-card .copy-icon:hover {
+  color: #ffffff;
+  background-color: #4a4a4a;
+}
+
+.command-card p {
+  color: #b0b0b0;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.command-details {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #3a3a3a;
+}
+
+.command-detail-item strong {
+  color: #ffffff;
+  font-weight: 500;
+  display: block; /* Ensures the label is above the value if multi-line */
+  margin-bottom: 3px;
+  font-size: 0.9em;
+}
+
+.command-detail-item span {
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  display: inline-block; /* Allows multiple arguments/permissions to wrap */
+  margin-right: 5px;
+  margin-bottom: 5
 }
