@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '10', name: 'membercount', description: 'Displays membercount', arguments: ['none'], permissions: ['none'], category: 'information' },
         { id: '10', name: 'boostcount', description: 'Displays boostcount', arguments: ['none'], permissions: ['none'], category: 'information' },
 
-]
+
 
 
     ];
