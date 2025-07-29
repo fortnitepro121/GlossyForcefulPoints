@@ -9,16 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   { "id": 5, "name": "analytics channels", "description": "List channel's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
   { "id": 5, "name": "analytics roles", "description": "List roles's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
   { "id": 5, "name": "analytics activity (COMING SOON)", "description": "List activty's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+{ "id": 5, "name": "quote", "description": "Quote's a member's message", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
 
 
   { "id": 5, "name": "giveaway", "description": "List all giveaway commands.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
-  { "id": 5, "name": "giveaway create", "description": "Start A giveaway for your Discord server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
-  { "id": 5, "name": "giveaway delete", "description": "Delete A giveaway for your Discord server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },       
+  { "id": 5, "name": "giveaway create", "description": "Start A giveaway for your Discord server.", "arguments": ["time","prize"], "permissions": ["manage_messages"], "category": "server" },
+  { "id": 5, "name": "giveaway delete", "description": "Delete A giveaway for your Discord server.", "arguments": ["messageID"], "permissions": ["manage_messages"], "category": "server" },       
   { "id": 5, "name": "giveaway list", "description": "List all giveaways that are hosted", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
 
   { "id": 5, "name": "poll", "description": "Create a poll in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
-  { "id": 5, "name": "poll create", "description": "Create a poll in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
-  { "id": 5, "name": "poll delete", "description": "Delete a poll in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
+  { "id": 5, "name": "poll create", "description": "Create a poll in your server.", "arguments": ["question"], "permissions": ["manage_messages"], "category": "server" },
+  { "id": 5, "name": "poll delete", "description": "Delete a poll in your server.", "arguments": ["messageid"], "permissions": ["manage_messages"], "category": "server" },
   { "id": 5, "name": "poll list", "description": "List polls in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
 
         
