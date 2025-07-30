@@ -1,411 +1,512 @@
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212; /* Very dark background */
-  color: #e0e0e0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Very dark background */
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Global Neon Glow */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top left, rgb(255, 255, 255, 0.1) 0%, transparent 30%),
-              radial-gradient(circle at bottom right, rgb(194, 194, 194, 0.1) 0%, transparent 30%);
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.7;
-  animation: neonBackgroundPulse 10s infinite alternate;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(88, 101, 242, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at bottom right, rgba(200, 50, 255, 0.1) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+    animation: neonBackgroundPulse 10s infinite alternate;
 }
 
 @keyframes neonBackgroundPulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  100% { transform: scale(1.05); opacity: 0.8; }
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.05); opacity: 0.8; }
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px; /* Slightly increased padding */
-  background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Subtle gradient */
-  border-bottom: 1px solid #333;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Softer shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Slightly increased padding */
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Subtle gradient */
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Softer shadow */
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Increased gap */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap */
 }
 
 .logo img {
-  height: 45px; /* Slightly larger logo */
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgb(255, 255, 255, 0.5); /* Neon glow on logo */
-  transition: box-shadow 0.3s ease;
+    height: 45px; /* Slightly larger logo */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.5); /* Neon glow on logo */
+    transition: box-shadow 0.3s ease;
 }
 
 .logo img:hover {
-  box-shadow: 0 0 25px rgb(212, 212, 212, 0.8), 0 0 40px rgb(214, 214, 214, 0.4); /* Stronger glow on hover */
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.8), 0 0 40px rgba(200, 50, 255, 0.4); /* Stronger glow on hover */
 }
 
 .logo-text {
-  font-size: 1.8rem; /* Larger text */
-  font-weight: 700; /* Bolder text */
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Subtle text glow */
+    font-size: 1.8rem; /* Larger text */
+    font-weight: 700; /* Bolder text */
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Subtle text glow */
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 40px; /* Increased gap */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px; /* Increased gap */
 }
 
 nav ul li a {
-  color: #b0b0b0;
-  text-decoration: none;
-  font-weight: 600; /* Bolder links */
-  padding: 8px 0; /* Increased padding */
-  position: relative;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: #b0b0b0;
+    text-decoration: none;
+    font-weight: 600; /* Bolder links */
+    padding: 8px 0; /* Increased padding */
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px; /* Slightly lower */
-  width: 0;
-  height: 3px; /* Thicker line */
-  background: linear-gradient(90deg, #d4d4d4, #8f8f8f); /* Neon gradient line */
-  box-shadow: 0 0 10px rgb(194, 194, 194, 0.7); /* Neon glow for underline */
-  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px; /* Slightly lower */
+    width: 0;
+    height: 3px; /* Thicker line */
+    background: linear-gradient(90deg, #5865F2, #c832ff); /* Neon gradient line */
+    box-shadow: 0 0 10px rgba(88, 101, 242, 0.7); /* Neon glow for underline */
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
 }
 
 nav ul li a.active,
 nav ul li a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow on active/hover */
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glow on active/hover */
 }
 
 nav ul li a.active::after,
 nav ul li a:hover::after {
-  width: 100%;
-  box-shadow: 0 0 15px rgba(88, 101, 242, 1), 0 0 20px rgb(255, 255, 255, 0.8); /* Stronger glow */
+    width: 100%;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 1), 0 0 20px rgba(200, 50, 255, 0.8); /* Stronger glow */
 }
 
 main {
-  padding: 30px 60px; /* Adjusted padding */
-  flex-grow: 1;
+    padding: 30px 60px; /* Adjusted padding */
+    flex-grow: 1;
 }
 
 /* --- Content Section Management --- */
 .content-section {
-  display: none;
-  opacity: 0;
-  transform: translateY(30px); /* More pronounced animation */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    display: none;
+    opacity: 0;
+    transform: translateY(30px); /* More pronounced animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .content-section.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --- Commands Section Styles --- */
 .commands-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px; /* Increased margin */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px; /* Increased margin */
 }
 
 .commands-header h1 {
-  font-size: 3em; /* Larger heading */
-  color: #ffffff;
-  margin: 0;
-  text-shadow: 0 0 10px rgba(88, 101, 242, 0.5); /* Subtle heading glow */
+    font-size: 3em; /* Larger heading */
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(88, 101, 242, 0.5); /* Subtle heading glow */
 }
 
 .search-bar {
-  position: relative;
-  width: 350px; /* Slightly wider */
+    position: relative;
+    width: 350px; /* Slightly wider */
 }
 
 .search-bar input {
-  width: 100%;
-  padding: 12px 18px 12px 50px; /* Increased padding */
-  background-color: #242424;
-  border: 1px solid #3a3a3a;
-  border-radius: 8px; /* Slightly more rounded */
-  color: #e0e0e0;
-  font-size: 1.05em; /* Slightly larger font */
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    padding: 12px 18px 12px 50px; /* Increased padding */
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px; /* Slightly more rounded */
+    color: #e0e0e0;
+    font-size: 1.05em; /* Slightly larger font */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-bar input:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 15px rgb(255, 255, 255, 0.5); /* Neon focus glow */
-  outline: none;
+    border-color: #5865F2;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.5); /* Neon focus glow */
+    outline: none;
 }
 
 .search-bar input::placeholder {
-  color: #888;
+    color: #888;
 }
 
 .search-bar .fas.fa-search {
-  position: absolute;
-  left: 20px; /* Adjusted icon position */
-  top: 50%;
-  transform: translateY(-50%);
-  color: #888;
-  font-size: 1.1em;
+    position: absolute;
+    left: 20px; /* Adjusted icon position */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.1em;
 }
 
 .category-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px; /* Adjusted gap */
-  margin-bottom: 35px; /* Increased margin */
-  justify-content: center; /* Center align pills */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px; /* Adjusted gap */
+    margin-bottom: 35px; /* Increased margin */
+    justify-content: center; /* Center align pills */
 }
 
 .category-pill {
-  background-color: #242424;
-  border: 1px solid #3a3a3a;
-  color: #b0b0b0;
-  padding: 10px 20px; /* Increased padding */
-  border-radius: 25px; /* More rounded pills */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Increased gap */
-  font-weight: 600;
-  font-size: 0.95em;
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    color: #b0b0b0;
+    padding: 10px 20px; /* Increased padding */
+    border-radius: 25px; /* More rounded pills */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Increased gap */
+    font-weight: 600;
+    font-size: 0.95em;
 }
 
 .category-pill:hover {
-  background-color: #2e2e2e;
-  border-color: #555;
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background-color: #2e2e2e;
+    border-color: #555;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .category-pill.active {
-  background: linear-gradient(45deg, #d6d6d6, #ffffff); /* Neon gradient for active */
-  border-color: #ffffff; /* Border matches end color of gradient */
-  color: #ffffff;
-  box-shadow: 0 0 15px rgba(88, 101, 242, 0.7), 0 0 25px rgb(219, 219, 219, 0.4); /* Stronger neon glow */
+    background: linear-gradient(45deg, #5865F2, #c832ff); /* Neon gradient for active */
+    border-color: #c832ff; /* Border matches end color of gradient */
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.7), 0 0 25px rgba(200, 50, 255, 0.4); /* Stronger neon glow */
 }
 
 .category-pill .count {
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-  color: #e0e0e0;
-  padding: 4px 10px; /* Increased padding */
-  border-radius: 12px; /* More rounded */
-  font-size: 0.75em;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: #e0e0e0;
+    padding: 4px 10px; /* Increased padding */
+    border-radius: 12px; /* More rounded */
+    font-size: 0.75em;
 }
 
 .category-pill.active .count {
-  background-color: rgba(0, 0, 0, 0.2); /* Darker count for active pill */
+    background-color: rgba(0, 0, 0, 0.2); /* Darker count for active pill */
 }
 
 .command-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Slightly wider min width */
-  gap: 30px; /* Increased gap */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Slightly wider min width */
+    gap: 30px; /* Increased gap */
+    margin-bottom: 40px; /* Add margin below the grid */
 }
 
 .command-card {
-  background-color: #242424;
-  border: 1px solid #3a3a3a;
-  border-radius: 12px; /* More rounded cards */
-  padding: 25px; /* Increased padding */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px; /* More rounded cards */
+    padding: 25px; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .command-card:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgb(255, 255, 255, 0.3); /* Shadow and subtle neon glow */
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(88, 101, 242, 0.3); /* Shadow and subtle neon glow */
 }
 
 .command-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px; /* Increased margin */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px; /* Increased margin */
 }
 
 .command-card h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 1.4em; /* Slightly larger heading */
-  font-weight: 700; /* Bolder heading */
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.4em; /* Slightly larger heading */
+    font-weight: 700; /* Bolder heading */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .command-card .copy-icon {
-  color: #b0b0b0;
-  cursor: pointer;
-  font-size: 1.2em; /* Slightly larger icon */
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-  position: absolute;
-  top: 20px; /* Adjusted position */
-  right: 20px; /* Adjusted position */
-  background-color: #333333;
-  padding: 10px; /* Larger hit area */
-  border-radius: 8px; /* More rounded */
-  border: 1px solid #4a4a4a;
+    color: #b0b0b0;
+    cursor: pointer;
+    font-size: 1.2em; /* Slightly larger icon */
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    top: 20px; /* Adjusted position */
+    right: 20px; /* Adjusted position */
+    background-color: #333333;
+    padding: 10px; /* Larger hit area */
+    border-radius: 8px; /* More rounded */
+    border: 1px solid #4a4a4a;
 }
 
 .command-card .copy-icon:hover {
-  color: #ffffff; /* Neon blue on hover */
-  background-color: #444444;
-  transform: scale(1.1); /* Pop on hover */
-  box-shadow: 0 0 10px rgb(255, 255, 255, 0.5); /* Neon glow on icon */
+    color: #5865F2; /* Neon blue on hover */
+    background-color: #444444;
+    transform: scale(1.1); /* Pop on hover */
+    box-shadow: 0 0 10px rgba(88, 101, 242, 0.5); /* Neon glow on icon */
 }
 
 .command-card p {
-  color: #c0c0c0; /* Lighter grey for description */
-  font-size: 1em; /* Standard font size */
-  margin-bottom: 20px; /* Increased margin */
-  line-height: 1.6;
+    color: #c0c0c0; /* Lighter grey for description */
+    font-size: 1em; /* Standard font size */
+    margin-bottom: 20px; /* Increased margin */
+    line-height: 1.6;
 }
 
 .command-details {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #3a3a3a;
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Gap between argument/permission sections */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Gap between argument/permission sections */
 }
 
 .command-detail-item strong {
-  color: #ffffff;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 8px; /* Increased margin */
-  font-size: 0.95em;
-  text-transform: uppercase; /* Uppercase for labels */
-  letter-spacing: 0.5px;
+    color: #ffffff;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px; /* Increased margin */
+    font-size: 0.95em;
+    text-transform: uppercase; /* Uppercase for labels */
+    letter-spacing: 0.5px;
 }
 
 .command-detail-item div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px; /* Gap between individual spans */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Gap between individual spans */
 }
 
 .command-detail-item span {
-  background-color: #333333;
-  color: #e0e0e0;
-  padding: 6px 12px; /* Increased padding */
-  border-radius: 6px; /* Slightly more rounded */
-  font-size: 0.88em; /* Slightly larger font */
-  display: inline-block;
-  border: 1px solid #4a4a4a;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+    background-color: #333333;
+    color: #e0e0e0;
+    padding: 6px 12px; /* Increased padding */
+    border-radius: 6px; /* Slightly more rounded */
+    font-size: 0.88em; /* Slightly larger font */
+    display: inline-block;
+    border: 1px solid #4a4a4a;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .command-detail-item span:hover {
-  background-color: #3a3a3a;
-  border-color: #5865F2; /* Neon border on hover */
+    background-color: #3a3a3a;
+    border-color: #5865F2; /* Neon border on hover */
 }
 
 /* Specific styling for the star icon in "prefix self" if it exists */
 .command-card h3 .fas.fa-star {
-  color: #FFD700; /* Gold color for star */
-  margin-right: 5px;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Gold glow */
+    color: #FFD700; /* Gold color for star */
+    margin-right: 5px;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Gold glow */
 }
+
+/* --- Discord Embed Styles --- */
+.discord-embed-container {
+    display: flex;
+    justify-content: center; /* Center the embed */
+    margin-top: 40px; /* Space above the embed */
+    margin-bottom: 60px; /* Space below the embed */
+    width: 100%;
+}
+
+.discord-embed {
+    display: flex;
+    background-color: #2f3136; /* Discord embed background color */
+    border-radius: 8px;
+    max-width: 600px; /* Max width for the embed */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    overflow: hidden; /* Ensure border-radius applies */
+}
+
+.embed-color-bar {
+    width: 5px;
+    background-color: #566c60; /* The specified hex color */
+    border-radius: 8px 0 0 8px; /* Rounded only on the left side */
+}
+
+.embed-content {
+    flex-grow: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative; /* For thumbnail positioning */
+}
+
+.embed-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px; /* Space between author and title */
+}
+
+.embed-thumbnail {
+    width: 40px; /* Size of the thumbnail */
+    height: 40px;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover;
+    margin-right: 8px; /* Space between thumbnail and author name */
+    position: absolute; /* Position thumbnail independently */
+    top: 16px;
+    right: 16px;
+}
+
+.embed-author .author-name {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95em;
+    margin-left: 0; /* Reset margin */
+}
+
+.embed-author .bot-tag {
+    background-color: #5865f2; /* Discord bot tag blue */
+    color: #ffffff;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.embed-title {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 60px; /* Make space for the thumbnail */
+}
+
+.embed-description {
+    color: #dcddde; /* Discord grey text color */
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0;
+    padding-right: 60px; /* Make space for the thumbnail */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  header {
-      padding: 15px 30px;
-  }
-  main {
-      padding: 20px 30px;
-  }
-  .commands-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-  }
-  .search-bar {
-      width: 100%;
-  }
-  .category-filters {
-      justify-content: flex-start; /* Align pills to the left on smaller screens */
-  }
-  .command-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
+    header {
+        padding: 15px 30px;
+    }
+    main {
+        padding: 20px 30px;
+    }
+    .commands-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .search-bar {
+        width: 100%;
+    }
+    .category-filters {
+        justify-content: flex-start; /* Align pills to the left on smaller screens */
+    }
+    .command-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .discord-embed {
+        max-width: 90%; /* Adjust max-width for smaller screens */
+    }
 }
 
 @media (max-width: 768px) {
-  header {
-      flex-direction: column;
-      gap: 15px;
-      padding: 15px 20px;
-  }
-  nav ul {
-      gap: 20px;
-  }
-  main {
-      padding: 15px 20px;
-  }
-  .commands-header h1 {
-      font-size: 2.2em;
-  }
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    nav ul {
+        gap: 20px;
+    }
+    main {
+        padding: 15px 20px;
+    }
+    .commands-header h1 {
+        font-size: 2.2em;
+    }
+    .embed-thumbnail {
+        position: static; /* Stack thumbnail on top on very small screens */
+        margin-bottom: 10px;
+    }
+    .embed-author {
+        flex-wrap: wrap;
+    }
+    .embed-title, .embed-description {
+        padding-right: 0; /* Remove padding when thumbnail is stacked */
+    }
 }
 
 @media (max-width: 480px) {
-  .logo-text {
-      font-size: 1.3rem;
-  }
-  nav ul {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-  }
-  .commands-header h1 {
-      font-size: 1.8em;
-  }
-  .category-pill {
-      padding: 8px 12px;
-      font-size: 0.85em;
-  }
-  .command-grid {
-      grid-template-columns: 1fr; /* Single column on very small screens */
-  }
-  .command-card {
-      padding: 20px;
-  }
-  .command-card .copy-icon {
-      top: 15px;
-      right: 15px;
-      padding: 8px;
-  }
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .commands-header h1 {
+        font-size: 1.8em;
+    }
+    .category-pill {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+    .command-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .command-card {
+        padding: 20px;
+    }
+    .command-card .copy-icon {
+        top: 15px;
+        right: 15px;
+        padding: 8px;
+    }
 }
