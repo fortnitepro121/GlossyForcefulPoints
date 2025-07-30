@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "poll create", "description": "Create a poll in your server.", "arguments": ["question"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "poll delete", "description": "Delete a poll in your server.", "arguments": ["messageid"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "poll list", "description": "List polls in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
+        { "id": 4, "name": "boosterrole share list", "description": "List who you share with.", "arguments": ["none"], "permissions": ["booster"], "category": "server" },
+        { "id": 4, "name": "boosterrole share", "description": "Share your role with your friends", "arguments": ["member"], "permissions": ["booster"], "category": "server" },
+        { "id": 4, "name": "boosterrole share remove", "description": "Remove a Share your role with your friends", "arguments": ["member"], "permissions": ["booster"], "category": "server" },
+        { "id": 4, "name": "boosterrole remove", "description": "Remove Booster role", "arguments": ["member"], "permissions": ["booster"], "category": "server" },
 
         { "id": 4, "name": "boosterrole color", "description": "Change the color of your booster role.", "arguments": ["new color"], "permissions": ["booster"], "category": "server" },
         { "id": 5, "name": "boosterrole icon", "description": "Change the icon of your booster role.", "arguments": ["new icon"], "permissions": ["booster"], "category": "server" },
