@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "analytics activity (COMING SOON)", "description": "List activty's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "quote", "description": "Quote's a member's message", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
 
-
         { "id": 5, "name": "giveaway", "description": "List all giveaway commands.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "giveaway create", "description": "Start A giveaway for your Discord server.", "arguments": ["time","prize"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "giveaway delete", "description": "Delete A giveaway for your Discord server.", "arguments": ["messageID"], "permissions": ["manage_messages"], "category": "server" },       
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "poll create", "description": "Create a poll in your server.", "arguments": ["question"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "poll delete", "description": "Delete a poll in your server.", "arguments": ["messageid"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "poll list", "description": "List polls in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
-        
+
         { "id": 4, "name": "boosterrole color", "description": "Change the color of your booster role.", "arguments": ["new color"], "permissions": ["booster"], "category": "server" },
         { "id": 5, "name": "boosterrole icon", "description": "Change the icon of your booster role.", "arguments": ["new icon"], "permissions": ["booster"], "category": "server" },
         { "id": 6, "name": "boosterrole create", "description": "Create a booster role with a custom name and color.", "arguments": ["name", "color"], "permissions": ["booster"], "category": "server" },
@@ -117,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredCommands.forEach(command => {
             const commandCard = document.createElement('div');
             commandCard.classList.add('command-card');
-            
+
             // Add a special class if you want unique styling for "prefix self"
             if (command.name === 'prefix self') {
                 commandCard.classList.add('special-command'); // Example class
