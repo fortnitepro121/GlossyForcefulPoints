@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 2, "name": "boosterrole", "description": "Create your own custom role as a server booster.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
         { "id": 3, "name": "boosterrole name", "description": "Change the name of your booster role.", "arguments": ["new name"], "permissions": ["booster"], "category": "server" },
         { "id": 3, "name": "nuke", "description": "Delete's the channel and remakes it", "arguments": ["none"], "permissions": ["manage_channels"], "category": "server" },
-
         { "id": 5, "name": "analytics", "description": "List all server analytics commmands.", "arguments": ["new icon"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "analytics members", "description": "List member's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "analytics channels", "description": "List channel's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
@@ -14,12 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "emote", "description": "Steal Emote's from other servers.", "arguments": ["emote"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "roleall", "description": "Role everyone in a discord server.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "server" },
         { "id": 5, "name": "whitelistbot", "description": "Whitelist a bot from a image", "arguments": ["bot_ID"], "permissions": ["administrator"], "category": "server" },
-
         { "id": 5, "name": "giveaway", "description": "List all giveaway commands.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "giveaway create", "description": "Start A giveaway for your Discord server.", "arguments": ["time","prize"], "permissions": ["manage_messages"], "category": "server" },
-        { "id": 5, "name": "giveaway delete", "description": "Delete A giveaway for your Discord server.", "arguments": ["messageID"], "permissions": ["manage_messages"], "category": "server" },       
+        { "id": 5, "name": "giveaway delete", "description": "Delete A giveaway for your Discord server.", "arguments": ["messageID"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "giveaway list", "description": "List all giveaways that are hosted", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
-
         { "id": 5, "name": "poll", "description": "Create a poll in your server.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "poll create", "description": "Create a poll in your server.", "arguments": ["question"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "poll delete", "description": "Delete a poll in your server.", "arguments": ["messageid"], "permissions": ["manage_messages"], "category": "server" },
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 4, "name": "boosterrole share", "description": "Share your role with your friends", "arguments": ["member"], "permissions": ["booster"], "category": "server" },
         { "id": 4, "name": "boosterrole share remove", "description": "Remove a Share your role with your friends", "arguments": ["member"], "permissions": ["booster"], "category": "server" },
         { "id": 4, "name": "boosterrole remove", "description": "Remove Booster role", "arguments": ["member"], "permissions": ["booster"], "category": "server" },
-
         { "id": 4, "name": "boosterrole color", "description": "Change the color of your booster role.", "arguments": ["new color"], "permissions": ["booster"], "category": "server" },
         { "id": 5, "name": "boosterrole icon", "description": "Change the icon of your booster role.", "arguments": ["new icon"], "permissions": ["booster"], "category": "server" },
         { "id": 6, "name": "boosterrole create", "description": "Create a booster role with a custom name and color.", "arguments": ["name", "color"], "permissions": ["booster"], "category": "server" },
@@ -67,12 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 36, "name": "antinuke toggle antispam", "description": "Enable or disable discord spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 36, "name": "antinuke toggle antiwebhookcreate", "description": "Enable or disable webhook protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 36, "name": "antinuke toggle antiwebhookspam", "description": "Enable or disable webhook spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-
-
         { "id": 38, "name": "antinuke whitelist add", "description": "Add a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "server" },
         { "id": 38, "name": "antinuke whitelist remove", "description": "Delete a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "server" },
         { "id": 38, "name": "antinuke whitelist list", "description": "List users to protection from anti nuke", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
-
         { "id": 36, "name": "antinuke toggle antilink", "description": "Enable or disable anti-link protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 37, "name": "antinuke toggle antiemoji", "description": "Enable or disable anti-emoji spam detection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 38, "name": "antinuke whitelist", "description": "White list commands for antinuke.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
@@ -93,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 53, "name": "remind set", "description": "Create a new reminder with time and reason.", "arguments": ["time", "reason"], "permissions": ["none"], "category": "information" },
         { "id": 54, "name": "remind list", "description": "View all your active reminders.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
         { "id": 25, "name": "untimeout", "description": "Unmute a member for a specified time and reason.", "arguments": ["member", "time", "reason"], "permissions": ["administrator"], "category": "moderation" },
-
         { "id": 55, "name": "remind delete", "description": "Delete a specific reminder using its ID.", "arguments": ["id"], "permissions": ["none"], "category": "information" },
         { "id": 56, "name": "instagram", "description": "Get public profile information from Instagram.", "arguments": ["name"], "permissions": ["none"], "category": "information" },
         { "id": 57, "name": "tiktok", "description": "Get public profile information from TikTok.", "arguments": ["name"], "permissions": ["none"], "category": "information" },
@@ -101,13 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 59, "name": "twitter", "description": "Get public profile information from Twitter.", "arguments": ["name"], "permissions": ["none"], "category": "information" },
         { "id": 60, "name": "membercount", "description": "Display the total number of server members.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
         { "id": 61, "name": "boostcount", "description": "Show how many boosts the server has.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
-        { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" } // Added example for the star icon
+        { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" }
     ];
 
     const commandGrid = document.getElementById('command-grid');
     const categoryPills = document.querySelectorAll('.category-pill');
     const searchInput = document.getElementById('command-search');
     const commandsLink = document.getElementById('commands-link');
+    const embedBuilderLink = document.getElementById('embed-builder-link'); // Added this
     const inviteLink = document.getElementById('invite-link');
 
     let activeCategory = 'all';
@@ -130,19 +123,16 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-        // Sort commands alphabetically by name
         filteredCommands.sort((a, b) => a.name.localeCompare(b.name));
 
         filteredCommands.forEach(command => {
             const commandCard = document.createElement('div');
             commandCard.classList.add('command-card');
 
-            // Add a special class if you want unique styling for "prefix self"
             if (command.name === 'prefix self') {
-                commandCard.classList.add('special-command'); // Example class
+                commandCard.classList.add('special-command');
             }
 
-            // Add Font Awesome star icon for "prefix self" or other special commands
             const commandNameDisplay = command.name === 'prefix self' 
                 ? `<i class="fas fa-star"></i> ${command.name}` 
                 : command.name;
@@ -167,21 +157,19 @@ document.addEventListener('DOMContentLoaded', () => {
             commandGrid.appendChild(commandCard);
         });
 
-        // Add event listeners for copy icons
         document.querySelectorAll('.copy-icon').forEach(icon => {
             icon.addEventListener('click', (event) => {
                 const commandToCopy = event.target.dataset.commandName;
                 navigator.clipboard.writeText(commandToCopy).then(() => {
-                    // Optional: Provide visual feedback that text was copied
                     event.target.classList.remove('far');
                     event.target.classList.add('fas');
-                    event.target.style.color = '#28a745'; // Green for success
-                    event.target.style.transform = 'scale(1.2)'; // Pop out
+                    event.target.style.color = '#28a745';
+                    event.target.style.transform = 'scale(1.2)';
                     setTimeout(() => {
                         event.target.classList.remove('fas');
                         event.target.classList.add('far');
                         event.target.style.color = '#b0b0b0';
-                        event.target.style.transform = 'scale(1)'; // Reset size
+                        event.target.style.transform = 'scale(1)';
                     }, 1500);
                 }).catch(err => {
                     console.error('Failed to copy text: ', err);
@@ -191,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCategoryCounts() {
-        // Collect all unique categories
         const uniqueCategories = [...new Set(commands.map(cmd => cmd.category))];
         const categories = {
             all: commands.length,
@@ -205,14 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const countElement = document.getElementById(`${category}-count`);
             if (countElement) {
                 countElement.textContent = categories[category];
-            } else {
-                // If a category pill doesn't exist for a category, you might want to log it
-                // console.warn(`No count element found for category: ${category}`);
             }
         }
     }
 
-    // Initial render and count update
     renderCommands(activeCategory);
     updateCategoryCounts();
 
@@ -229,16 +212,22 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCommands(activeCategory, searchInput.value);
     });
 
-    // Handle navigation clicks for the "Invite" link
-    inviteLink.addEventListener('click', (e) => {
-        document.querySelectorAll('nav ul li a').forEach(link => link.classList.remove('active'));
-        // commandsLink.classList.add('active'); // Keep commands active if desired, or remove this line
-    });
-
-    // On page load, ensure 'Commands' link is active based on current path
-    const path = window.location.pathname;
-    if (path === '/' || path.includes('index.html')) { // Adjusted condition for better handling
-        document.querySelectorAll('nav ul li a').forEach(link => link.classList.remove('active'));
-        commandsLink.classList.add('active');
+    // Update nav link active state
+    function updateNavLinkActiveState() {
+        const path = window.location.pathname;
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.classList.remove('active');
+        });
+        if (path.includes('embed.html')) {
+            embedBuilderLink.classList.add('active');
+        } else {
+            commandsLink.classList.add('active');
+        }
     }
+
+    updateNavLinkActiveState();
+
+    // Add click event for navigation links
+    commandsLink.addEventListener('click', updateNavLinkActiveState);
+    embedBuilderLink.addEventListener('click', updateNavLinkActiveState);
 });
