@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "analytics roles", "description": "List roles's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "analytics activity (COMING SOON)", "description": "List activty's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "quote", "description": "Quote's a member's message", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
+        { "id": 5, "name": "emote", "description": "Steal Emote's from other servers.", "arguments": ["emote"], "permissions": ["manage_messages"], "category": "server" },
+        { "id": 5, "name": "roleall", "description": "Role everyone in a discord server.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "server" },
+        { "id": 5, "name": "whitelistbot", "description": "Whitelist a bot from a image", "arguments": ["bot_ID"], "permissions": ["administrator"], "category": "server" },
 
         { "id": 5, "name": "giveaway", "description": "List all giveaway commands.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "giveaway create", "description": "Start A giveaway for your Discord server.", "arguments": ["time","prize"], "permissions": ["manage_messages"], "category": "server" },
@@ -57,6 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 33, "name": "autolog toggle", "description": "Enable or disable specific logging events.", "arguments": ["channel_create", "channel_delete", "role_create", "role_delete", "role_update", "member_join", "member_remove", "message_edit", "message_delete"], "permissions": ["manager_server"], "category": "server" },
         { "id": 34, "name": "autolog set channel", "description": "Set the channel for all autolog messages.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "server" },
         { "id": 35, "name": "antinuke", "description": "Enable anti-nuke protection and set the log channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "toggle_antimassmention", "description": "Enable or disable anti-massmention protection in a channel. ", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "toggle_antibotjoin", "description": "Enable or disable bot-join protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "toggle_antiinvite", "description": "Enable or disable discord server invite protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+
+
+
+        
         { "id": 36, "name": "toggle_antilink", "description": "Enable or disable anti-link protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 37, "name": "toggle_antiemoji", "description": "Enable or disable anti-emoji spam detection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 38, "name": "toggle_antispam", "description": "Enable or disable anti-spam protection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
