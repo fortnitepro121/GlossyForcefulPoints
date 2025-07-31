@@ -103,7 +103,7 @@ nav ul li a:hover {
 nav ul li a.active::after,
 nav ul li a:hover::after {
   width: 100%;
-  box-shadow: 0 0 15px rgba(88, 101, 242, 1), 0 0 20px rgb(255, 255, 255, 0.8); /* Stronger glow */
+  box-shadow: 0 0 15px rgba(88, 101, 242, 0.7), 0 0 20px rgb(255, 255, 255, 0.8); /* Stronger glow */
 }
 
 main {
