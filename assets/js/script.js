@@ -200,7 +200,7 @@ let allJsonKeys = [...mainKeys, ...embedKeys];
 // 'jsonObject' is used internally, do not change it's value. Assign to 'json' instead.
 // 'json' is the object that is used to build the embed. Assigning to it also updates the editor.
 let jsonObject = window.json || {
-    content: "You can~~not~~ do `this`.```py\nAnd this.\nprint('Hi')```\n*italics* or _italics_     __*underline italics*__\n**bold**     __**underline bold**__\n***bold italics***  __***underline bold italics***__\n__underline__     ~~Strikethrough~~",
+    content: "You can~~not~~ do `this`.```py\nAnd this.\nprint('Hi')```\n*italics* or _italics_     __*underline italics*__\n**bold** __**underline bold**__\n***bold italics*** __***underline bold italics***__\n__underline__     ~~Strikethrough~~",
     embed: {
         title: "Hello ~~people~~ world :wave:",
         description: "You can use [links](https://discord.com) or emojis :smile: 😎\n```\nAnd also code blocks\n```",
@@ -1042,7 +1042,7 @@ addEventListener('DOMContentLoaded', () => {
                         if (pre) pre.style.maxWidth = '90%';
                     } else {
                         hide(embedThumbnailLink.parentElement);
-                        pre?.style.removeProperty('max-width');
+                        if (pre) pre.style.removeProperty('max-width');
                     }
 
                     return afterBuilding();
