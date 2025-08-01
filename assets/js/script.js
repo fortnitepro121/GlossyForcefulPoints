@@ -335,6 +335,7 @@ addEventListener('DOMContentLoaded', () => {
         embedCont = document.querySelector('.msgEmbed>.container'),
         gui = guiParent.querySelector('.gui:first-of-type');
 
+    let editor;
     editor = CodeMirror(elt => editorHolder.parentNode.replaceChild(elt, editorHolder), {
         value: JSON.stringify(json, null, 4),
         gutters: ["CodeMirror-foldgutter", "CodeMirror-lint-markers"],
@@ -1042,7 +1043,7 @@ addEventListener('DOMContentLoaded', () => {
                         if (pre) pre.style.maxWidth = '90%';
                     } else {
                         hide(embedThumbnailLink.parentElement);
-                        pre?.style.removeProperty('max-width');
+                        if (pre) pre.style.removeProperty('max-width');
                     }
 
                     return afterBuilding();
@@ -1179,7 +1180,9 @@ addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const picker = new CP(document.querySelector('.picker'), state = { parent: document.querySelector('.cTop') });
+    let picker;
+    // The CP class is defined in color-picker.min.js
+    picker = new CP(document.querySelector('.picker'), { parent: document.querySelector('.cTop') });
 
     picker.fire?.('change', toRGB('#41f097'));
 
@@ -1295,6 +1298,133 @@ addEventListener('DOMContentLoaded', () => {
         if (!smallerScreen.matches)
             content.focus();
     })
+
+    document.querySelector('.top-btn.menu')?.addEventListener('click', e => {
+        if (e.target.closest('.item.dataLink')) {
+            const data = encodeJson(json, true).replace(/(?<!data=[^=]+|=)=(&|$)/g, x => x === '=' ? '' : '&');
+            if (!window.chrome)
+                // With long text inside a 'prompt' on Chromium based browsers, some text will be trimmed off and replaced with '...'.
+                return prompt('Here\'s the current URL with base64 embed data:', data);
+
+            // So, for the Chromium users, we copy to clipboard instead of showing a prompt.
+            try {
+                // Clipboard API might only work on HTTPS protocol.
+                navigator.clipboard.writeText(data);
+            } catch {
+                const input = document.body.appendChild(document.createElement('input'));
+                input.value = data;
+                input.select();
+                document.setSelectionRange(0, 50000);
+                document.execCommand('copy');
+                document.body.removeChild(input);
+            }
+
+            return alert('Copied to clipboard.');
+        }
+
+        if (e.target.closest('.item.download'))
+            return createElement({ a: { download: 'embed' + '.json', href: 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(json, null, 4)) } }).click();
+
+        const input = e.target.closest('.item')?.querySelector('input');
+        if (input) input.checked = !input.checked;
+
+        if (e.target.closest('.item.auto')) {
+            autoUpdateURL = document.body.classList.toggle('autoUpdateURL');
+            if (autoUpdateURL) localStorage.setItem('autoUpdateURL', true);
+            else localStorage.removeItem('autoUpdateURL');
+            urlOptions({ set: ['data', encodeJson(json)] });
+        } else if (e.target.closest('.item.reverse')) {
+            reverse(reverseColumns);
+            reverseColumns = !reverseColumns;
+            toggleStored('reverseColumns');
+        } else if (e.target.closest('.item.noUser')) {
+            if (options.avatar) document.querySelector('img.avatar').src = options.avatar;
+
+            const noUser = document.body.classList.toggle('no-user');
+            if (autoParams) noUser ? urlOptions({ set: ['nouser', ''] }) : urlOptions({ remove: 'nouser' });
+            toggleStored('noUser');
+        } else if (e.target.closest('.item.auto-params')) {
+            if (input.checked) localStorage.setItem('autoParams', true);
+            else localStorage.removeItem('autoParams');
+            autoParams = input.checked;
+        } else if (e.target.closest('.toggles>.item')) {
+            const win = input.closest('.item').classList[2];
+
+            if (input.checked) {
+                document.body.classList.remove(`no-${win}`);
+                localStorage.removeItem(`hide${win}`);
+            } else {
+                document.body.classList.add(`no-${win}`);
+                localStorage.setItem(`hide${win}`, true);
+            }
+        } else if (e.target.closest('.item.multi') && !noMultiEmbedsOption) {
+            multiEmbeds = !document.body.classList.toggle('single');
+            activeFields = document.querySelectorAll('.gui > .item.active');
+
+            if (autoParams) !multiEmbeds ? urlOptions({ set: ['single', ''] }) : urlOptions({ remove: 'single' });
+            if (multiEmbeds) localStorage.setItem('multiEmbeds', true);
+            else {
+                localStorage.removeItem('multiEmbeds');
+                jsonObject.embeds = [jsonObject.embeds?.[0] || {}];
+            }
+
+            buildGui();
+            buildEmbed();
+            editor.setValue(JSON.stringify(json, null, 4));
+        }
+
+        e.target.closest('.top-btn')?.classList.toggle('active')
+    })
+
+    document.querySelectorAll('.img').forEach(e => {
+        if (e.nextElementSibling?.classList.contains('spinner-container'))
+            e.addEventListener('error', el => {
+                el.target.style.removeProperty('display');
+                el.target.nextElementSibling.style.display = 'block';
+            })
+    })
+
+    let pickInGuiMode = false;
+    togglePicker = pickLater => {
+        colors.classList.toggle('display');
+        document.querySelector('.side1').classList.toggle('low');
+        if (pickLater) pickInGuiMode = true;
+    };
+
+    document.querySelector('.pickerToggle').addEventListener('click', () => togglePicker());
+    buildEmbed();
+
+    document.body.addEventListener('click', e => {
+        if (e.target.classList.contains('low') || (e.target.classList.contains('top') && colors.classList.contains('display')))
+            togglePicker();
+    })
+
+    // #0070ff, #5865f2
+    document.querySelector('.colors .hex>div')?.addEventListener('input', e => {
+        let inputValue = e.target.value;
+
+        if (inputValue.startsWith('#'))
+            e.target.value = inputValue.slice(1), inputValue = e.target.value;
+        if (inputValue.length !== 6 || !/^[a-zA-Z0-9]{6}$/g.test(inputValue))
+            return e.target.closest('.hex').classList.add('incorrect');
+
+        e.target.closest('.hex').classList.remove('incorrect');
+
+        const embedIndex = multiEmbeds && lastActiveGuiEmbedIndex !== -1 ? lastActiveGuiEmbedIndex : 0;
+        jsonObject.embeds[embedIndex].color = parseInt(inputValue, 16);
+        picker.fire?.('change', toRGB(inputValue));
+
+        buildEmbed();
+    })
+
+    if (onlyEmbed) document.querySelector('.side1')?.remove();
+
+    const menuMore = document.querySelector('.item.section .inner.more');
+    const menuSource = menuMore?.querySelector('.source');
+
+    if (!sourceOption) menuSource.remove();
+    if (menuMore.childElementCount < 2) menuMore?.classList.add('invisible');
+    if (menuMore.parentElement.childElementCount < 1) menuMore?.parentElement.classList.add('invisible');
 
     document.querySelector('.top-btn.copy').addEventListener('click', e => {
         const mark = e.target.closest('.top-btn.copy').querySelector('.mark'),
