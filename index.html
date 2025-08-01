@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="assets/css/index.css" id="embed-css" disabled>
+
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -20,44 +25,50 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/" id="commands-link" class="active">Commands</a></li>
-                <li><a href="/embed.html" id="embed-builder-link">Embed Builder</a></li>
+                <li><a href="#" id="commands-link" class="active">Commands</a></li>
+                <li><a href="#" id="embed-builder-link">Embed Builder</a></li>
                 <li><a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" id="invite-link">Invite</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="commands-section" class="content-section active">
-            <div class="commands-header">
-                <h1>Commands</h1>
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="command-search" placeholder="Search...">
+        <div id="commands-content">
+            <section id="commands-section" class="content-section active">
+                <div class="commands-header">
+                    <h1>Commands</h1>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="command-search" placeholder="Search...">
+                    </div>
                 </div>
+                <div class="category-filters">
+                    <div class="category-pill active" data-category="all">
+                        All <span class="count" id="all-count"></span>
+                    </div>
+                    <div class="category-pill" data-category="server">
+                        Server <span class="count" id="server-count"></span>
+                    </div>
+                    <div class="category-pill" data-category="utility">
+                        Utility <span class="count" id="utility-count"></span>
+                    </div>
+                    <div class="category-pill" data-category="moderation">
+                        Moderation <span class="count" id="moderation-count"></span>
+                    </div>
+                    <div class="category-pill" data-category="information">
+                        Information <span class="count" id="information-count"></span>
+                    </div>
+                </div>
+                <div class="command-grid" id="command-grid">
+                </div>
+            </section>
+        </div>
+
+        <div id="embed-builder-content" class="noDisplay">
             </div>
-            <div class="category-filters">
-                <div class="category-pill active" data-category="all">
-                    All <span class="count" id="all-count"></span>
-                </div>
-                <div class="category-pill" data-category="server">
-                    Server <span class="count" id="server-count"></span>
-                </div>
-                <div class="category-pill" data-category="utility">
-                    Utility <span class="count" id="utility-count"></span>
-                </div>
-                <div class="category-pill" data-category="moderation">
-                    Moderation <span class="count" id="moderation-count"></span>
-                </div>
-                <div class="category-pill" data-category="information">
-                    Information <span class="count" id="information-count"></span>
-                </div>
-            </div>
-            <div class="command-grid" id="command-grid">
-                </div>
-        </section>
     </main>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script src="script.js" defer></script>
+    <script src="assets/js/components.js" id="embed-components-js" disabled></script>
+    <script src="assets/js/script.js" id="embed-script-js" defer disabled></script>
+</body
