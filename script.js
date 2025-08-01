@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "analytics roles", "description": "List roles's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "analytics activity (COMING SOON)", "description": "List activty's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
         { "id": 5, "name": "quote", "description": "Quote's a member's message", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
+        { "id": 5, "name": "boosters", "description": "List all server boosts", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+
         { "id": 5, "name": "emote", "description": "Steal Emote's from other servers.", "arguments": ["emote"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "roleall", "description": "Role everyone in a discord server.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "server" },
         { "id": 5, "name": "whitelistbot", "description": "Whitelist a bot from a image", "arguments": ["bot_ID"], "permissions": ["administrator"], "category": "server" },
