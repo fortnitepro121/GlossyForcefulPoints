@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const embedBuilderLink = document.getElementById('embed-builder-link');
     const commandsContent = document.getElementById('commands-content');
     const embedBuilderContent = document.getElementById('embed-builder-content');
-    const embedCss = document.getElementById('embed-css');
 
     let activeCategory = 'all';
 
@@ -198,80 +197,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function switchPage(page) {
-        // Deactivate all nav links
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        // Hide all content sections
-        commandsContent.classList.add('noDisplay');
-        embedBuilderContent.classList.add('noDisplay');
-        embedCss.disabled = true;
-
-        if (page === 'commands') {
-            commandsContent.classList.remove('noDisplay');
-            commandsLink.classList.add('active');
-            renderCommands(activeCategory);
-            updateCategoryCounts();
-        } else if (page === 'embed-builder') {
-            embedBuilderContent.classList.remove('noDisplay');
-            embedBuilderLink.classList.add('active');
-            embedCss.disabled = false;
-            // Load the embed builder's scripts and HTML
-            if (!embedBuilderContent.innerHTML) {
-                loadEmbedBuilder();
-            }
-        }
-    }
-
-    async function loadEmbedBuilder() {
-        try {
-            const response = await fetch('embed-builder-content.html');
-            const html = await response.text();
-            embedBuilderContent.innerHTML = html;
-
-            // Enable embed builder scripts after loading HTML
-            document.getElementById('embed-components-js').disabled = false;
-            document.getElementById('embed-script-js').disabled = false;
-            document.getElementById('embed-color-picker-js').disabled = false;
-
-            // Wait for scripts to load and then initialize the builder
-            const scriptLoaded = new Promise(resolve => {
-                document.getElementById('embed-script-js').onload = resolve;
-            });
-            await scriptLoaded;
-
-            // Initialize the embed builder
-            window.onload();
-
-        } catch (error) {
-            console.error('Failed to load embed builder:', error);
-            embedBuilderContent.innerHTML = '<p style="color: red;">Failed to load embed builder. Please check the console for details.</p>';
-        }
-    }
-
     commandsLink.addEventListener('click', (event) => {
         event.preventDefault();
-        window.history.pushState(null, '', '/');
-        switchPage('commands');
+        window.location.href = 'https://leech.world'; // Redirect to the main page
     });
 
     embedBuilderLink.addEventListener('click', (event) => {
         event.preventDefault();
-        window.history.pushState(null, '', '/embed');
-        switchPage('embed-builder');
+        window.location.href = 'https://glitchii.github.io/embedbuilder/'; // Redirect to the external embed builder
     });
+    
+    // This part of the script will still run on the commands page.
+    renderCommands(activeCategory);
+    updateCategoryCounts();
 
-    // Initial page load
-    const path = window.location.pathname;
-    if (path === '/embed') {
-        switchPage('embed-builder');
-    } else {
-        switchPage('commands');
-    }
-
-    // Event listeners for commands page
     categoryPills.forEach(pill => {
         pill.addEventListener('click', () => {
             categoryPills.forEach(p => p.classList.remove('active'));
@@ -285,6 +224,14 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCommands(activeCategory, searchInput.value);
     });
 
-    renderCommands(activeCategory);
-    updateCategoryCounts();
+    // Update nav link active state for initial page load
+    const path = window.location.pathname;
+    if (path.includes('/embed')) {
+        commandsLink.classList.remove('active');
+        embedBuilderLink.classList.add('active');
+    } else {
+        embedBuilderLink.classList.remove('active');
+        commandsLink.classList.add('active');
+    }
+
 });
