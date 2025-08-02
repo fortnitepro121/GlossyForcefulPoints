@@ -232,5 +232,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('input', () => {
         renderCommands(activeCategory, searchInput.value);
-@@ -243,3 +247,4 @@
 });
+
