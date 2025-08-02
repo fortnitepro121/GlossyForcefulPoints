@@ -1,74 +1,75 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>leech</title>
-    <link rel="icon" href="72b84e261db5a06170f0123e51b500b7-removebg-preview.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leech</title>
+    <link rel="icon" href="72b84e261db5a06170f0123e51b500b7-removebg-preview.png">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Leech Bot – Powerful Discord Utility">
-    <meta property="og:description" content="Leech is a multi-functional Discord bot packed with moderation, utility, info, and fun commands.">
-    <meta property="og:title" content="leech bot">
-    <meta property="og:description" content="leech is a multi-functional Discord bot packed with moderation, utility, info, and fun commands.">
-    <meta property="og:image" content="72b84e261db5a06170f0123e51b500b7-removebg-preview.png">
-    <meta property="og:url" content="https://leech.world/">
-    <meta name="theme-color" content="#566c60">
+        <meta property="og:title" content="Leech Bot – Powerful Discord Utility">
+    <meta property="og:description" content="Leech is a multi-functional Discord bot packed with moderation, utility, info, and fun commands.">
+    <meta property="og:title" content="leech bot">
+    <meta property="og:description" content="leech is a multi-functional Discord bot packed with moderation, utility, info, and fun commands.">
+    <meta property="og:image" content="72b84e261db5a06170f0123e51b500b7-removebg-preview.png">
+    <meta property="og:url" content="https://leech.world/">
+    <meta name="theme-color" content="#566c60">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="72b84e261db5a06170f0123e51b500b7-removebg-preview.png" alt="Bot Logo">
-            <span class="logo-text">leech</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/" id="commands-link" class="active">Commands</a></li>
-                <li><a href="/embed" id="embed-builder-link">Embed Builder</a></li>
-                <li><a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" id="invite-link">Invite</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <div class="logo">
+            <img src="72b84e261db5a06170f0123e51b500b7-removebg-preview.png" alt="Bot Logo">
+            <span class="logo-text">leech</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/" id="commands-link" class="active">Commands</a></li>
+                <li><a href="/embed.html" id="embed-builder-link">Embed Builder</a></li>
+                <li><a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" id="invite-link">Invite</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main>
-        <section id="commands-section" class="content-section active">
-            <div class="commands-header">
-                <h1>Commands</h1>
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="command-search" placeholder="Search...">
-                </div>
-            </div>
-            <div class="category-filters">
-                <div class="category-pill active" data-category="all">
-                    All <span class="count" id="all-count"></span>
-                </div>
-                <div class="category-pill" data-category="server">
-                    Server <span class="count" id="server-count"></span>
-                </div>
-                <div class="category-pill" data-category="utility">
-                    Utility <span class="count" id="utility-count"></span>
-                </div>
-                <div class="category-pill" data-category="moderation">
-                    Moderation <span class="count" id="moderation-count"></span>
-                </div>
-                <div class="category-pill" data-category="information">
-                    Information <span class="count" id="information-count"></span>
-                </div>
-                <div class="category-pill" data-category="fun">
-                    Fun <span class="count" id="fun-count"></span>
-                </div>
-            </div>
-            <div class="command-grid" id="command-grid">
-            </div>
-        </section>
-    </main>
+    <main>
+        <section id="commands-section" class="content-section active">
+            <div class="commands-header">
+                <h1>Commands</h1>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="command-search" placeholder="Search...">
+                </div>
+            </div>
+            <div class="category-filters">
+                <div class="category-pill active" data-category="all">
+                    All <span class="count" id="all-count"></span>
+                </div>
+                <div class="category-pill" data-category="server">
+                    Server <span class="count" id="server-count"></span>
+                </div>
+                <div class="category-pill" data-category="utility">
+                    Utility <span class="count" id="utility-count"></span>
+                </div>
+                <div class="category-pill" data-category="moderation">
+                    Moderation <span class="count" id="moderation-count"></span>
+                </div>
+                <div class="category-pill" data-category="information">
+                    Information <span class="count" id="information-count"></span>
+                </div>
+                <div class="category-pill" data-category="fun">
+                    Fun <span class="count" id="fun-count"></span>
+                </div>
+            </div>
+                        <div id="commands-content">
+                <div class="command-grid" id="command-grid">
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
