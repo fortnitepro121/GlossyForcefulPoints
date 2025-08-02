@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "joins", "description": "Show Recent joins", "arguments": ["none"], "permissions": ["none"], "category": "server" },
         { "id": 5, "name": "forcenickname", "description": "Force a member's nickname. Call again without a nickname to remove the lock and reset.", "arguments": ["member","name"], "permissions": ["manage_nicknames"], "category": "server" },
         { "id": 5, "name": "roles", "description": "List all roles in the server.", "arguments": ["member","name"], "permissions": ["none"], "category": "server" },
-        { "id": 5, "name": "roleplay on/off", "description": "Turn roleplay commands on or off", "arguments": ["on", "off"], "permissions": ["none"], "category": "server" },
-        { "id": 5, "name": "kiss", "description": "Kiss a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
-        { "id": 5, "name": "slap", "description": "Slap a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
-        { "id": 5, "name": "hug", "description": "Hug a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
+        { "id": 5, "name": "roleplay on/off", "description": "Turn roleplay commands on or off", "arguments": ["on", "off"], "permissions": ["none"], "category": "fun" },
+        { "id": 5, "name": "kiss", "description": "Kiss a member", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 5, "name": "slap", "description": "Slap a member", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 5, "name": "hug", "description": "Hug a member", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
 
         { "id": 5, "name": "emote", "description": "Steal Emote's from other servers.", "arguments": ["emote"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "roleall", "description": "Role everyone in a discord server.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "server" },
@@ -245,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
 
 
 
