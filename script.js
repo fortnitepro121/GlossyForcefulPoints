@@ -63,9 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 29, "name": "resetnick", "description": "Reset a member's nickname to their original username.", "arguments": ["member"], "permissions": ["manage_nicknames"], "category": "utility" },
         { "id": 30, "name": "swapnick", "description": "Swap nicknames between two members.", "arguments": ["member1", "member2"], "permissions": ["manage_nicknames"], "category": "utility" },
         { "id": 31, "name": "reversenick", "description": "Reverse the characters in a member’s nickname.", "arguments": ["member"], "permissions": ["manage_nicknames"], "category": "utility" },
-        { "id": 32, "name": "autolog", "description": "View the current autolog configuration.", "arguments": ["none"], "permissions": ["manager_server"], "category": "server" },
-        { "id": 33, "name": "autolog toggle", "description": "Enable or disable specific logging events.", "arguments": ["channel_create", "channel_delete", "role_create", "role_delete", "role_update", "member_join", "member_remove", "message_edit", "message_delete"], "permissions": ["manager_server"], "category": "server" },
-        { "id": 34, "name": "autolog set channel", "description": "Set the channel for all autolog messages.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "server" },
         { "id": 35, "name": "antinuke", "description": "Enable anti-nuke protection and set the log channel.", "arguments": ["toggles"], "permissions": ["administrator"], "category": "server" },
         { "id": 36, "name": "antinuke toggle antimassmention", "description": "Enable or disable anti-massmention protection in a channel. ", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
         { "id": 36, "name": "antinuke toggle antibotjoin", "description": "Enable or disable bot-join protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
@@ -231,4 +228,5 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCommands(activeCategory, searchInput.value);
     });
 });
+
 
