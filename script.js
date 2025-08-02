@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "joins", "description": "Show Recent joins", "arguments": ["none"], "permissions": ["none"], "category": "server" },
         { "id": 5, "name": "forcenickname", "description": "Force a member's nickname. Call again without a nickname to remove the lock and reset.", "arguments": ["member","name"], "permissions": ["manage_nicknames"], "category": "server" },
         { "id": 5, "name": "roles", "description": "List all roles in the server.", "arguments": ["member","name"], "permissions": ["none"], "category": "server" },
-        { "id": 5, "name": "roleplay on/off", "description": "Turn roleplay commands on or off", "arguments": ["on", "off"], "permissions": ["none"], "category": "fun" },
-        { "id": 5, "name": "kiss", "description": "Kiss a member", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
-        { "id": 5, "name": "slap", "description": "Slap a member", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
-        { "id": 5, "name": "hug", "description": "Hug a member", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 5, "name": "roleplay on/off", "description": "Turn roleplay commands on or off", "arguments": ["on", "off"], "permissions": ["none"], "category": "server" },
+        { "id": 5, "name": "kiss", "description": "Kiss a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
+        { "id": 5, "name": "slap", "description": "Slap a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
+        { "id": 5, "name": "hug", "description": "Hug a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
 
         { "id": 5, "name": "emote", "description": "Steal Emote's from other servers.", "arguments": ["emote"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "roleall", "description": "Role everyone in a discord server.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "server" },
@@ -65,19 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 31, "name": "reversenick", "description": "Reverse the characters in a member’s nickname.", "arguments": ["member"], "permissions": ["manage_nicknames"], "category": "utility" },
         { "id": 32, "name": "autolog", "description": "View the current autolog configuration.", "arguments": ["none"], "permissions": ["manager_server"], "category": "server" },
         { "id": 33, "name": "autolog toggle", "description": "Enable or disable specific logging events.", "arguments": ["channel_create", "channel_delete", "role_create", "role_delete", "role_update", "member_join", "member_remove", "message_edit", "message_delete"], "permissions": ["manager_server"], "category": "server" },
-        { "id": 34, "name": "autolog set channel", "description": "Set the channel for all autolog messages.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "antinuke" },
+        { "id": 34, "name": "autolog set channel", "description": "Set the channel for all autolog messages.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "server" },
         { "id": 35, "name": "antinuke", "description": "Enable anti-nuke protection and set the log channel.", "arguments": ["toggles"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antimassmention", "description": "Enable or disable anti-massmention protection in a channel. ", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 36, "name": "antinuke toggle antibotjoin", "description": "Enable or disable bot-join protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 36, "name": "antinuke toggle antiinvite", "description": "Enable or disable discord server invite protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 36, "name": "antinuke toggle antispam", "description": "Enable or disable discord spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 36, "name": "antinuke toggle antiwebhookcreate", "description": "Enable or disable webhook protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 36, "name": "antinuke toggle antiwebhookspam", "description": "Enable or disable webhook spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 38, "name": "antinuke whitelist add", "description": "Add a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 38, "name": "antinuke whitelist remove", "description": "Delete a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 38, "name": "antinuke whitelist list", "description": "List users to protection from anti nuke", "arguments": ["channel"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 36, "name": "antinuke toggle antilink", "description": "Enable or disable anti-link protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "antinuke" },
-        { "id": 37, "name": "antinuke toggle antiemoji", "description": "Enable or disable anti-emoji spam detection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antimassmention", "description": "Enable or disable anti-massmention protection in a channel. ", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antibotjoin", "description": "Enable or disable bot-join protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antiinvite", "description": "Enable or disable discord server invite protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antispam", "description": "Enable or disable discord spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antiwebhookcreate", "description": "Enable or disable webhook protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antiwebhookspam", "description": "Enable or disable webhook spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
+        { "id": 38, "name": "antinuke whitelist add", "description": "Add a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "server" },
+        { "id": 38, "name": "antinuke whitelist remove", "description": "Delete a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "server" },
+        { "id": 38, "name": "antinuke whitelist list", "description": "List users to protection from anti nuke", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antilink", "description": "Enable or disable anti-link protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+        { "id": 37, "name": "antinuke toggle antiemoji", "description": "Enable or disable anti-emoji spam detection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 38, "name": "antinuke whitelist", "description": "White list commands for antinuke.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 39, "name": "snipe", "description": "Retrieve the last deleted message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
         { "id": 40, "name": "clearsnipe", "description": "Clear all sniped messages or images.", "arguments": ["none"], "permissions": ["none"], "category": "utility" },
@@ -104,87 +104,133 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 60, "name": "membercount", "description": "Display the total number of server members.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
         { "id": 61, "name": "boostcount", "description": "Show how many boosts the server has.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
         { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" }
-        { "id": 38, "name": "autolog", "description": "Autolog Config", "arguments": ["none"], "permissions": ["administrator"], "category": "autolog" },
-        { "id": 38, "name": "autolog toggle", "description": "Toggle Autolog setup", "arguments": ["options"], "permissions": ["administrator"], "category": "autolog" },
-        { "id": 38, "name": "autolog set channel", "description": "Setup channel for autolog", "arguments": ["channel"], "permissions": ["administrator"], "category": "autolog" },
-
     ];
 
-// Elements
-const commandGrid = document.getElementById("command-grid");
-const categoryPills = document.querySelectorAll(".category-pill");
-const searchInput = document.getElementById("command-search");
+    const commandGrid = document.getElementById('command-grid');
+    const categoryPills = document.querySelectorAll('.category-pill');
+    const searchInput = document.getElementById('command-search');
+    const commandsLink = document.getElementById('commands-link');
+    const embedBuilderLink = document.getElementById('embed-builder-link');
+    const commandsContent = document.getElementById('commands-content');
+    const embedBuilderContent = document.getElementById('embed-builder-content');
 
-// Function to render commands based on filter
-function renderCommands(filterCategory = "all", searchTerm = "") {
-  // Filter commands by category and search term
-  const filtered = commands.filter(cmd => {
-    const categoryMatch = filterCategory === "all" || cmd.category === filterCategory;
-    const searchMatch =
-      cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      cmd.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return categoryMatch && searchMatch;
-  });
+    let activeCategory = 'all';
 
-  // Render commands
-  commandGrid.innerHTML = filtered.length
-    ? filtered.map(cmd => `
-      <div class="command-card">
-        <h3>${cmd.name}</h3>
-        <p>${cmd.description}</p>
-        <small>Category: ${cmd.category}</small>
-      </div>
-    `).join("")
-    : `<p>No commands found.</p>`;
+    function renderCommands(filterCategory = 'all', searchTerm = '') {
+        commandGrid.innerHTML = '';
+        let filteredCommands = commands;
 
-  // Update counts
-  updateCategoryCounts(searchTerm);
-}
+        if (filterCategory !== 'all') {
+            filteredCommands = filteredCommands.filter(cmd => cmd.category === filterCategory);
+        }
 
-// Update category counts based on search term
-function updateCategoryCounts(searchTerm = "") {
-  categoryPills.forEach(pill => {
-    const cat = pill.getAttribute("data-category");
-    const count = cat === "all"
-      ? commands.filter(cmd => cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) || cmd.description.toLowerCase().includes(searchTerm.toLowerCase())).length
-      : commands.filter(cmd =>
-          cmd.category === cat &&
-          (cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) || cmd.description.toLowerCase().includes(searchTerm.toLowerCase()))
-        ).length;
-    const countSpan = pill.querySelector(".count");
-    if (countSpan) {
-      countSpan.textContent = count;
+        if (searchTerm) {
+            const lowerCaseSearchTerm = searchTerm.toLowerCase();
+            filteredCommands = filteredCommands.filter(cmd =>
+                cmd.name.toLowerCase().includes(lowerCaseSearchTerm) ||
+                cmd.description.toLowerCase().includes(lowerCaseSearchTerm) ||
+                cmd.arguments.some(arg => arg.toLowerCase().includes(lowerCaseSearchTerm)) ||
+                cmd.permissions.some(perm => perm.toLowerCase().includes(lowerCaseSearchTerm))
+            );
+        }
+
+        filteredCommands.sort((a, b) => a.name.localeCompare(b.name));
+
+        filteredCommands.forEach(command => {
+            const commandCard = document.createElement('div');
+            commandCard.classList.add('command-card');
+
+            if (command.name === 'prefix self') {
+                commandCard.classList.add('special-command');
+            }
+
+            const commandNameDisplay = command.name === 'prefix self' 
+                ? `<i class="fas fa-star"></i> ${command.name}` 
+                : command.name;
+
+            commandCard.innerHTML = `
+                <div class="command-card-header">
+                    <h3>${commandNameDisplay}</h3>
+                    <i class="far fa-copy copy-icon" data-command-name="${command.name}"></i>
+                </div>
+                <p>${command.description}</p>
+                <div class="command-details">
+                    <div class="command-detail-item">
+                        <strong>Arguments</strong>
+                        <div>${command.arguments.map(arg => `<span>${arg}</span>`).join('')}</div>
+                    </div>
+                    <div class="command-detail-item">
+                        <strong>Permissions</strong>
+                        <div>${command.permissions.map(perm => `<span>${perm}</span>`).join('')}</div>
+                    </div>
+                </div>
+            `;
+            commandGrid.appendChild(commandCard);
+        });
+
+        document.querySelectorAll('.copy-icon').forEach(icon => {
+            icon.addEventListener('click', (event) => {
+                const commandToCopy = event.target.dataset.commandName;
+                navigator.clipboard.writeText(commandToCopy).then(() => {
+                    event.target.classList.remove('far');
+                    event.target.classList.add('fas');
+                    event.target.style.color = '#28a745';
+                    event.target.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        event.target.classList.remove('fas');
+                        event.target.classList.add('far');
+                        event.target.style.color = '#b0b0b0';
+                        event.target.style.transform = 'scale(1)';
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
+            });
+        });
     }
-  });
-}
 
-// Event: Category click
-categoryPills.forEach(pill => {
-  pill.addEventListener("click", () => {
-    // Remove active class from all
-    categoryPills.forEach(p => p.classList.remove("active"));
-    // Add active to clicked
-    pill.classList.add("active");
+    function updateCategoryCounts() {
+        const uniqueCategories = [...new Set(commands.map(cmd => cmd.category))];
+        const categories = {
+            all: commands.length,
+        };
 
-    const category = pill.getAttribute("data-category");
-    renderCommands(category, searchInput.value);
-  });
+        uniqueCategories.forEach(category => {
+            categories[category] = commands.filter(cmd => cmd.category === category).length;
+        });
+
+        for (const category in categories) {
+            const countElement = document.getElementById(`${category}-count`);
+            if (countElement) {
+                countElement.textContent = categories[category];
+            }
+        }
+    }
+
+    commandsLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = 'https://leech.world'; // Redirect to the main page
+    });
+
+    embedBuilderLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = 'https://glitchii.github.io/embedbuilder/'; // Redirect to the external embed builder
+    });
+
+    // This part of the script will still run on the commands page.
+    renderCommands(activeCategory);
+    updateCategoryCounts();
+
+    categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            categoryPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            activeCategory = pill.dataset.category;
+            renderCommands(activeCategory, searchInput.value);
+        });
+    });
+
+    searchInput.addEventListener('input', () => {
+        renderCommands(activeCategory, searchInput.value);
+@@ -243,3 +247,4 @@
 });
-
-// Event: Search input
-searchInput.addEventListener("input", () => {
-  // Find active category pill
-  const activePill = document.querySelector(".category-pill.active");
-  const category = activePill ? activePill.getAttribute("data-category") : "all";
-
-  renderCommands(category, searchInput.value);
-});
-
-// Initial render (all commands)
-renderCommands();
-
-
-
-
-
-
