@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const commands = [
+        // Your commands array is pasted here, unchanged
         { "id": 1, "name": "setprefix", "description": "Change the bot's command prefix for this server.", "arguments": ["prefix"], "permissions": ["Administrator"], "category": "server" },
         { "id": 2, "name": "boosterrole", "description": "Create your own custom role as a server booster.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
         { "id": 3, "name": "boosterrole name", "description": "Change the name of your booster role.", "arguments": ["new name"], "permissions": ["booster"], "category": "server" },
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 5, "name": "kiss", "description": "Kiss a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
         { "id": 5, "name": "slap", "description": "Slap a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
         { "id": 5, "name": "hug", "description": "Hug a member", "arguments": ["member"], "permissions": ["none"], "category": "server" },
-
         { "id": 5, "name": "emote", "description": "Steal Emote's from other servers.", "arguments": ["emote"], "permissions": ["manage_messages"], "category": "server" },
         { "id": 5, "name": "roleall", "description": "Role everyone in a discord server.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "server" },
         { "id": 5, "name": "whitelistbot", "description": "Whitelist a bot from a image", "arguments": ["bot_ID"], "permissions": ["administrator"], "category": "server" },
@@ -109,10 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const commandGrid = document.getElementById('command-grid');
     const categoryPills = document.querySelectorAll('.category-pill');
     const searchInput = document.getElementById('command-search');
-    const commandsLink = document.getElementById('commands-link');
-    const embedBuilderLink = document.getElementById('embed-builder-link');
-    const commandsContent = document.getElementById('commands-content');
-    const embedBuilderContent = document.getElementById('embed-builder-content');
 
     let activeCategory = 'all';
 
@@ -128,13 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const lowerCaseSearchTerm = searchTerm.toLowerCase();
             filteredCommands = filteredCommands.filter(cmd =>
                 cmd.name.toLowerCase().includes(lowerCaseSearchTerm) ||
-                cmd.description.toLowerCase().includes(lowerCaseSearchTerm) ||
-                cmd.arguments.some(arg => arg.toLowerCase().includes(lowerCaseSearchTerm)) ||
-                cmd.permissions.some(perm => perm.toLowerCase().includes(lowerCaseSearchTerm))
+                cmd.description.toLowerCase().includes(lowerCaseSearchTerm)
             );
         }
 
         filteredCommands.sort((a, b) => a.name.localeCompare(b.name));
+
+        if (filteredCommands.length === 0) {
+            commandGrid.innerHTML = '<p class="no-results">No commands found for this filter or search term.</p>';
+            return;
+        }
 
         filteredCommands.forEach(command => {
             const commandCard = document.createElement('div');
@@ -144,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 commandCard.classList.add('special-command');
             }
 
-            const commandNameDisplay = command.name === 'prefix self' 
-                ? `<i class="fas fa-star"></i> ${command.name}` 
+            const commandNameDisplay = command.name === 'prefix self'
+                ? `<i class="fas fa-star"></i> ${command.name}`
                 : command.name;
 
             commandCard.innerHTML = `
@@ -207,17 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    commandsLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.location.href = 'https://leech.world'; // Redirect to the main page
-    });
-
-    embedBuilderLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.location.href = 'https://glitchii.github.io/embedbuilder/'; // Redirect to the external embed builder
-    });
-
-    // This part of the script will still run on the commands page.
+    // Initial render when the page loads
     renderCommands(activeCategory);
     updateCategoryCounts();
 
@@ -232,5 +221,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('input', () => {
         renderCommands(activeCategory, searchInput.value);
+    });
 });
-
