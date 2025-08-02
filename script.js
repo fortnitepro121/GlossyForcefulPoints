@@ -110,145 +110,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ];
 
-    const commandGrid = document.getElementById('command-grid');
-    const categoryPills = document.querySelectorAll('.category-pill');
-    const searchInput = document.getElementById('command-search');
-    const commandsLink = document.getElementById('commands-link');
-    const embedBuilderLink = document.getElementById('embed-builder-link');
-    const commandsContent = document.getElementById('commands-content');
-    const embedBuilderContent = document.getElementById('embed-builder-content');
+// Elements
+const commandGrid = document.getElementById("command-grid");
+const categoryPills = document.querySelectorAll(".category-pill");
+const searchInput = document.getElementById("command-search");
 
-    let activeCategory = 'all';
+// Function to render commands based on filter
+function renderCommands(filterCategory = "all", searchTerm = "") {
+  // Filter commands by category and search term
+  const filtered = commands.filter(cmd => {
+    const categoryMatch = filterCategory === "all" || cmd.category === filterCategory;
+    const searchMatch =
+      cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      cmd.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return categoryMatch && searchMatch;
+  });
 
-    function renderCommands(filterCategory = 'all', searchTerm = '') {
-        commandGrid.innerHTML = '';
-        let filteredCommands = commands;
+  // Render commands
+  commandGrid.innerHTML = filtered.length
+    ? filtered.map(cmd => `
+      <div class="command-card">
+        <h3>${cmd.name}</h3>
+        <p>${cmd.description}</p>
+        <small>Category: ${cmd.category}</small>
+      </div>
+    `).join("")
+    : `<p>No commands found.</p>`;
 
-        if (filterCategory !== 'all') {
-            filteredCommands = filteredCommands.filter(cmd => cmd.category === filterCategory);
-        }
+  // Update counts
+  updateCategoryCounts(searchTerm);
+}
 
-        if (searchTerm) {
-            const lowerCaseSearchTerm = searchTerm.toLowerCase();
-            filteredCommands = filteredCommands.filter(cmd =>
-                cmd.name.toLowerCase().includes(lowerCaseSearchTerm) ||
-                cmd.description.toLowerCase().includes(lowerCaseSearchTerm) ||
-                cmd.arguments.some(arg => arg.toLowerCase().includes(lowerCaseSearchTerm)) ||
-                cmd.permissions.some(perm => perm.toLowerCase().includes(lowerCaseSearchTerm))
-            );
-        }
-
-        filteredCommands.sort((a, b) => a.name.localeCompare(b.name));
-
-        filteredCommands.forEach(command => {
-            const commandCard = document.createElement('div');
-            commandCard.classList.add('command-card');
-
-            if (command.name === 'prefix self') {
-                commandCard.classList.add('special-command');
-            }
-
-            const commandNameDisplay = command.name === 'prefix self' 
-                ? `<i class="fas fa-star"></i> ${command.name}` 
-                : command.name;
-
-            commandCard.innerHTML = `
-                <div class="command-card-header">
-                    <h3>${commandNameDisplay}</h3>
-                    <i class="far fa-copy copy-icon" data-command-name="${command.name}"></i>
-                </div>
-                <p>${command.description}</p>
-                <div class="command-details">
-                    <div class="command-detail-item">
-                        <strong>Arguments</strong>
-                        <div>${command.arguments.map(arg => `<span>${arg}</span>`).join('')}</div>
-                    </div>
-                    <div class="command-detail-item">
-                        <strong>Permissions</strong>
-                        <div>${command.permissions.map(perm => `<span>${perm}</span>`).join('')}</div>
-                    </div>
-                </div>
-            `;
-            commandGrid.appendChild(commandCard);
-        });
-
-        document.querySelectorAll('.copy-icon').forEach(icon => {
-            icon.addEventListener('click', (event) => {
-                const commandToCopy = event.target.dataset.commandName;
-                navigator.clipboard.writeText(commandToCopy).then(() => {
-                    event.target.classList.remove('far');
-                    event.target.classList.add('fas');
-                    event.target.style.color = '#28a745';
-                    event.target.style.transform = 'scale(1.2)';
-                    setTimeout(() => {
-                        event.target.classList.remove('fas');
-                        event.target.classList.add('far');
-                        event.target.style.color = '#b0b0b0';
-                        event.target.style.transform = 'scale(1)';
-                    }, 1500);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                });
-            });
-        });
+// Update category counts based on search term
+function updateCategoryCounts(searchTerm = "") {
+  categoryPills.forEach(pill => {
+    const cat = pill.getAttribute("data-category");
+    const count = cat === "all"
+      ? commands.filter(cmd => cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) || cmd.description.toLowerCase().includes(searchTerm.toLowerCase())).length
+      : commands.filter(cmd =>
+          cmd.category === cat &&
+          (cmd.name.toLowerCase().includes(searchTerm.toLowerCase()) || cmd.description.toLowerCase().includes(searchTerm.toLowerCase()))
+        ).length;
+    const countSpan = pill.querySelector(".count");
+    if (countSpan) {
+      countSpan.textContent = count;
     }
+  });
+}
 
-    function updateCategoryCounts() {
-        const uniqueCategories = [...new Set(commands.map(cmd => cmd.category))];
-        const categories = {
-            all: commands.length,
-        };
+// Event: Category click
+categoryPills.forEach(pill => {
+  pill.addEventListener("click", () => {
+    // Remove active class from all
+    categoryPills.forEach(p => p.classList.remove("active"));
+    // Add active to clicked
+    pill.classList.add("active");
 
-        uniqueCategories.forEach(category => {
-            categories[category] = commands.filter(cmd => cmd.category === category).length;
-        });
-
-        for (const category in categories) {
-            const countElement = document.getElementById(`${category}-count`);
-            if (countElement) {
-                countElement.textContent = categories[category];
-            }
-        }
-    }
-
-    commandsLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.location.href = 'https://leech.world'; // Redirect to the main page
-    });
-
-    embedBuilderLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.location.href = 'https://glitchii.github.io/embedbuilder/'; // Redirect to the external embed builder
-    });
-    
-    // This part of the script will still run on the commands page.
-    renderCommands(activeCategory);
-    updateCategoryCounts();
-
-    categoryPills.forEach(pill => {
-        pill.addEventListener('click', () => {
-            categoryPills.forEach(p => p.classList.remove('active'));
-            pill.classList.add('active');
-            activeCategory = pill.dataset.category;
-            renderCommands(activeCategory, searchInput.value);
-        });
-    });
-
-    searchInput.addEventListener('input', () => {
-        renderCommands(activeCategory, searchInput.value);
-    });
-
-    // Update nav link active state for initial page load
-    const path = window.location.pathname;
-    if (path.includes('/embed')) {
-        commandsLink.classList.remove('active');
-        embedBuilderLink.classList.add('active');
-    } else {
-        embedBuilderLink.classList.remove('active');
-        commandsLink.classList.add('active');
-    }
-
+    const category = pill.getAttribute("data-category");
+    renderCommands(category, searchInput.value);
+  });
 });
+
+// Event: Search input
+searchInput.addEventListener("input", () => {
+  // Find active category pill
+  const activePill = document.querySelector(".category-pill.active");
+  const category = activePill ? activePill.getAttribute("data-category") : "all";
+
+  renderCommands(category, searchInput.value);
+});
+
+// Initial render (all commands)
+renderCommands();
+
 
 
 
