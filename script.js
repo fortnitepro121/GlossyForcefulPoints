@@ -65,19 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 31, "name": "reversenick", "description": "Reverse the characters in a member’s nickname.", "arguments": ["member"], "permissions": ["manage_nicknames"], "category": "utility" },
         { "id": 32, "name": "autolog", "description": "View the current autolog configuration.", "arguments": ["none"], "permissions": ["manager_server"], "category": "server" },
         { "id": 33, "name": "autolog toggle", "description": "Enable or disable specific logging events.", "arguments": ["channel_create", "channel_delete", "role_create", "role_delete", "role_update", "member_join", "member_remove", "message_edit", "message_delete"], "permissions": ["manager_server"], "category": "server" },
-        { "id": 34, "name": "autolog set channel", "description": "Set the channel for all autolog messages.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "server" },
+        { "id": 34, "name": "autolog set channel", "description": "Set the channel for all autolog messages.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "antinuke" },
         { "id": 35, "name": "antinuke", "description": "Enable anti-nuke protection and set the log channel.", "arguments": ["toggles"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antimassmention", "description": "Enable or disable anti-massmention protection in a channel. ", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antibotjoin", "description": "Enable or disable bot-join protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antiinvite", "description": "Enable or disable discord server invite protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antispam", "description": "Enable or disable discord spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antiwebhookcreate", "description": "Enable or disable webhook protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antiwebhookspam", "description": "Enable or disable webhook spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
-        { "id": 38, "name": "antinuke whitelist add", "description": "Add a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "server" },
-        { "id": 38, "name": "antinuke whitelist remove", "description": "Delete a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "server" },
-        { "id": 38, "name": "antinuke whitelist list", "description": "List users to protection from anti nuke", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
-        { "id": 36, "name": "antinuke toggle antilink", "description": "Enable or disable anti-link protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
-        { "id": 37, "name": "antinuke toggle antiemoji", "description": "Enable or disable anti-emoji spam detection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
+        { "id": 36, "name": "antinuke toggle antimassmention", "description": "Enable or disable anti-massmention protection in a channel. ", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antibotjoin", "description": "Enable or disable bot-join protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antiinvite", "description": "Enable or disable discord server invite protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antispam", "description": "Enable or disable discord spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antiwebhookcreate", "description": "Enable or disable webhook protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antiwebhookspam", "description": "Enable or disable webhook spam protection in a channel.", "arguments": ["none"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 38, "name": "antinuke whitelist add", "description": "Add a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 38, "name": "antinuke whitelist remove", "description": "Delete a user to protection from anti nuke", "arguments": ["member"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 38, "name": "antinuke whitelist list", "description": "List users to protection from anti nuke", "arguments": ["channel"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 36, "name": "antinuke toggle antilink", "description": "Enable or disable anti-link protection in a channel.", "arguments": ["channel"], "permissions": ["administrator"], "category": "antinuke" },
+        { "id": 37, "name": "antinuke toggle antiemoji", "description": "Enable or disable anti-emoji spam detection.", "arguments": ["channel"], "permissions": ["administrator"], "category": "antinuke" },
         { "id": 38, "name": "antinuke whitelist", "description": "White list commands for antinuke.", "arguments": ["channel"], "permissions": ["administrator"], "category": "server" },
         { "id": 39, "name": "snipe", "description": "Retrieve the last deleted message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
         { "id": 40, "name": "clearsnipe", "description": "Clear all sniped messages or images.", "arguments": ["none"], "permissions": ["none"], "category": "utility" },
@@ -104,6 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 60, "name": "membercount", "description": "Display the total number of server members.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
         { "id": 61, "name": "boostcount", "description": "Show how many boosts the server has.", "arguments": ["none"], "permissions": ["none"], "category": "information" },
         { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" }
+        { "id": 38, "name": "autolog", "description": "Autolog Config", "arguments": ["none"], "permissions": ["administrator"], "category": "autolog" },
+        { "id": 38, "name": "autolog toggle", "description": "Toggle Autolog setup", "arguments": ["options"], "permissions": ["administrator"], "category": "autolog" },
+        { "id": 38, "name": "autolog set channel", "description": "Setup channel for autolog", "arguments": ["channel"], "permissions": ["administrator"], "category": "autolog" },
+
     ];
 
     const commandGrid = document.getElementById('command-grid');
@@ -245,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
 
 
 
