@@ -78,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 38, "name": "autolog", "description": "View autolog config for Guild", "arguments": ["none"], "permissions": ["administrator"], "category": "autolog" },
         { "id": 38, "name": "autolog set channel", "description": "Set channel for autolog", "arguments": ["channel"], "permissions": ["administrator"], "category": "autolog" },
         { "id": 38, "name": "autolog toggle", "description": "Toggle options for autolog", "arguments": ["option"], "permissions": ["administrator"], "category": "autolog" },
+        { "id": 38, "name": "history", "description": "View history on a member", "arguments": ["member"], "permissions": ["none"], "category": "moderation" },
+        { "id": 38, "name": "history remove", "description": "Remove a member history", "arguments": ["member"], "permissions": ["administrator"], "category": "moderation" },
+        { "id": 38, "name": "history removeall", "description": "Remove all member(s) history", "arguments": ["none"], "permissions": ["administrator"], "category": "moderation" },
+        { "id": 38, "name": "staffstrip", "description": "Remove all Staff role's from a member", "arguments": ["member"], "permissions": ["administrator"], "category": "moderation" },
+        { "id": 38, "name": "jaillist", "description": "List all members who are jailed", "arguments": ["none"], "permissions": ["none"], "category": "moderation" },
+        { "id": 38, "name": "modhistory", "description": "View a mod's actions", "arguments": ["member"], "permissions": ["administrator"], "category": "moderation" },
 
         { "id": 39, "name": "snipe", "description": "Retrieve the last deleted message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
         { "id": 40, "name": "clearsnipe", "description": "Clear all sniped messages or images.", "arguments": ["none"], "permissions": ["none"], "category": "utility" },
@@ -228,5 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCommands(activeCategory, searchInput.value);
     });
 });
+
 
 
