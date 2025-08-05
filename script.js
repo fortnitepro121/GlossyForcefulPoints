@@ -112,7 +112,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 61, "name": "roleplay", "description": "Toggle roleplay on or off using arg", "arguments": ["on","off"], "permissions": ["administrator"], "category": "fun" },
         { "id": 61, "name": "kiss", "description": "Kiss a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
         { "id": 61, "name": "hug", "description": "Hug a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
-        { "id": 61, "name": "slap", "description": "Slap a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 61, "name": "facepalm", "description": "facepalm a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 61, "name": "cuddle", "description": "cuddle a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 61, "name": "shoot", "description": "shoot a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 61, "name": "tickle", "description": "tickle a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 61, "name": "bite", "description": "bite a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
 
         { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" }
     ];
@@ -234,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCommands(activeCategory, searchInput.value);
     });
 });
+
 
 
 
