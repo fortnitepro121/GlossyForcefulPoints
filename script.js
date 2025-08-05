@@ -227,7 +227,7 @@ function renderCommands(filterCategory = 'all', searchTerm = '') {
     document.querySelectorAll('.copy-btn').forEach(icon => {
         icon.addEventListener('click', (event) => {
             const commandToCopy = event.currentTarget.parentNode.querySelector('.command-name span').textContent;
-            navigator.clipboard.writeText(`!${commandToCopy}`).then(() => {
+            navigator.clipboard.writeText(`,${commandToCopy}`).then(() => {
                 const iconElement = event.currentTarget.querySelector('i');
                 iconElement.classList.remove('fa-copy');
                 iconElement.classList.add('fa-check');
@@ -456,3 +456,4 @@ function hideMobileMenu(event) {
         }
     }
 }
+
