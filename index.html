@@ -3,79 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>leech</title>
-    <link rel="icon" href="72b84e261db5a06170f0123e51b500b7-removebg-preview.png">
-
-    <meta property="og:title" content="leech bot">
-    <meta property="og:description" content="leech is a multi-functional Discord bot packed with moderation, utility, info, and fun commands.">
-    <meta property="og:title" content="leech bot">
-    <meta property="og:description" content="leech is a multi-functional Discord bot packed with moderation, utility, info, and fun commands.">
-    <meta property="og:image" content="72b84e261db5a06170f0123e51b500b7-removebg-preview.png">
-    <meta property="og:url" content="https://leech.world/">
+    <title>Leech - A Powerful Discord Bot</title>
+    
+    <link rel="icon" href="72b84e261db5a06170f0123e51b500b7-removebg-preview.png" type="image/png">
+    
+    <meta property="og:title" content="leech">
+    <meta property="og:description" content="Meet Leech — your all-in-one Discord bot built to power up your server with smart moderation, advanced anti-nuke protection, detailed logging, and fun interactive commands. From keeping your community safe to making it more engaging, Leech does it all with speed, style, and simplicity.">
+    <meta property="og:url" content="leech.world">
+    <meta property="og:image" content="72b84e261db5a06170f0123e51b500b7-removebg-preview.png"> 
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#566c60">
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="72b84e261db5a06170f0123e51b500b7-removebg-preview.png" alt="Bot Logo">
-            <span class="logo-text">leech</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" id="commands-link" class="active">Commands</a></li>
-                <li><a href="#" id="embed-builder-link">Embed Builder</a></li>
-                <li><a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" id="invite-link">Invite</a></li>
-            </ul>
+
+    <div id="preloader">
+        <h1 class="typing-text"></h1>
+    </div>
+
+    <div id="main-content" class="hidden">
+    
+    <header class="header">
+        <nav class="navbar">
+            <div class="header-center-bar">
+                <ul class="nav-links">
+                    <li><a href="#commands" onclick="hideMobileMenu()">Commands</a></li>
+                    <li><a href="#stats" onclick="hideMobileMenu()">Status</a></li>
+                    <li>
+                        <a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn primary-btn glow-btn">Invite</a>
+                    </li>
+                </ul>
+                <div class="logo-box">
+                    <div class="logo-circle">
+                        <img src="72b84e261db5a06170f0123e51b500b7-removebg-preview.png" alt="Leech Logo" class="bot-logo">
+                    </div>
+                    <a href="#home" class="logo">Leech</a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section id="commands-section" class="content-section active">
-            <div class="commands-header">
-                <h1>Commands</h1>
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="command-search" placeholder="Search...">
+    <section id="home" class="hero animate-on-scroll">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Leech is Discord's <br>best tool <span class="highlight">all-in-one bot</span></h1>
+                <p>Meet Leech — your all-in-one Discord bot built to power up your server with smart moderation, advanced anti-nuke protection, detailed logging, and fun interactive commands. From keeping your community safe to making it more engaging, Leech does it all with speed, style, and simplicity..</p>
+                <div class="hero-buttons">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn primary-btn large-btn glow-btn"><i class="fas fa-plus-circle"></i> Invite to Discord</a>
+                    <a href="#" class="btn secondary-btn large-btn glow-btn"><i class="fas fa-shopping-cart"></i> Purchase</a>
                 </div>
             </div>
-            <div class="category-filters">
-                <div class="category-pill active" data-category="all">
-                    All <span class="count" id="all-count"></span>
+            <div class="hero-features">
+                <div class="feature-box glow-card">
+                    <i class="fas fa-certificate"></i> welcome system
                 </div>
-                <div class="category-pill" data-category="server">
-                    Server <span class="count" id="server-count"></span>
+                <div class="feature-box glow-card">
+                    <i class="fas fa-crown"></i> boost system
                 </div>
-                <div class="category-pill" data-category="utility">
-                    Utility <span class="count" id="utility-count"></span>
-                </div>
-                <div class="category-pill" data-category="moderation">
-                    Moderation <span class="count" id="moderation-count"></span>
-                </div>
-                <div class="category-pill" data-category="information">
-                    Information <span class="count" id="information-count"></span>
-                </div>
-                <div class="category-pill" data-category="fun">
-                    Fun <span class="count" id="fun-count"></span>
-                </div>
-                <div class="category-pill" data-category="autolog">
-                    Autolog <span class="count" id="autolog-count"></span>
-                </div>
-                <div class="category-pill" data-category="antinuke">
-                    Antinuke <span class="count" id="antinuke-count"></span>
+                <div class="feature-box glow-card">
+                    <i class="fas fa-camera"></i> server config
                 </div>
             </div>
-            <div class="command-grid" id="command-grid">
-                </div>
-        </section>
-    </main>
+        </div>
+    </section>
+    
+    <section id="stats-banner" class="animate-on-scroll">
+        <div class="container">
+            <h2 class="stats-text">Powering <span id="animated-user-count" class="animated-count">0</span> users across <span id="animated-server-count" class="animated-count">0</span> guilds</h2>
+        </div>
+    </section>
 
+    <section id="modules-carousel" class="animate-on-scroll">
+        <div class="container">
+            <div class="modules-title-container">
+                <h3 class="modules-title">Modules</h3>
+            </div>
+            <div class="modules-carousel-container">
+                <div class="modules-carousel-track">
+                    <div class="modules-carousel-items">
+                        <div class="module-card">
+                            <i class="fas fa-shield-alt module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Antinuke</p>
+                                <p class="module-members">Protect your server</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-history module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Autolog</p>
+                                <p class="module-members">Keep a detailed history</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-handshake module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Welcome</p>
+                                <p class="module-members">Greet new members</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-gift module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Giveaway</p>
+                                <p class="module-members">Host server giveaways</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-poll module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Polls</p>
+                                <p class="module-members">Create server polls</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-gavel module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Moderation</p>
+                                <p class="module-members">Advanced tools</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-cog module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Server Config</p>
+                                <p class="module-members">Customize your server</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modules-carousel-items">
+                        <div class="module-card">
+                            <i class="fas fa-shield-alt module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Antinuke</p>
+                                <p class="module-members">Protect your server</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-history module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Autolog</p>
+                                <p class="module-members">Keep a detailed history</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-handshake module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Welcome</p>
+                                <p class="module-members">Greet new members</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-gift module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Giveaway</p>
+                                <p class="module-members">Host server giveaways</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-poll module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Polls</p>
+                                <p class="module-members">Create server polls</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-gavel module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Moderation</p>
+                                <p class="module-members">Advanced tools</p>
+                            </div>
+                        </div>
+                        <div class="module-card">
+                            <i class="fas fa-cog module-icon"></i>
+                            <div class="module-info">
+                                <p class="module-name">Server Config</p>
+                                <p class="module-members">Customize your server</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="commands" class="commands section-padding">
+        <div class="container">
+            <div class="commands-header">
+                <div class="commands-title">
+                    <i class="fas fa-file-alt"></i>
+                    <h2>Commands</h2>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="search...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+          <div class="commands-tabs-container">
+              <div class="commands-tabs-wrapper">
+                  <div class="commands-tabs">
+                        <button class="tab-button active" data-category="all">
+                            <i class="fas fa-list"></i> all
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="server">
+                            <i class="fas fa-server"></i> server
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="moderation">
+                            <i class="fas fa-gavel"></i> moderation
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="information">
+                            <i class="fas fa-info-circle"></i> information
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="utility">
+                            <i class="fas fa-tools"></i> utility
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="fun">
+                            <i class="fas fa-laugh-squint"></i> fun
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="antinuke">
+                            <i class="fas fa-shield-alt"></i> antinuke
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="autolog">
+                            <i class="fas fa-history"></i> autolog
+                            <span class="command-count"></span>
+                        </button>
+                        <button class="tab-button" data-category="welcome">
+                            <i class="fas fa-handshake"></i> welcome
+                            <span class="command-count"></span>
+                        </button>
+                    </div>
+              </div>
+          </div>
+            
+            <div id="command-list-container" class="command-grid">
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="stats section-padding animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">Bot Stats</h2>
+            <div class="stats-card glow-card">
+                <div class="stat-item">
+                    <i class="fas fa-server"></i>
+                    <p>Servers</p>
+                    <span id="server-count">40+</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <p>Users</p>
+                    <span id="user-count">3,000+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="invite" class="invite section-padding animate-on-scroll">
+        <div class="container invite-content">
+            <div class="invite-text">
+                <h2>Ready to supercharge your server?</h2>
+                <p>Invite Leech today and take control of your community with a powerful suite of tools.</p>
+                <a href="https://discord.com/oauth2/authorize?client_id=1397794405007757383&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn primary-btn large-btn glow-btn">Invite Leech Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Leech Bot. All rights reserved.</p>
+        </div>
+    </footer>
+
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
