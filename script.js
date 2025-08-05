@@ -426,3 +426,33 @@ document.addEventListener('DOMContentLoaded', () => {
         commandsTabsContainer.scrollLeft = scrollLeft - walk;
     });
 });
+// New function to handle custom routing and scrolling
+function hideMobileMenu(event) {
+    const mobileMenu = document.querySelector('.header-center-bar');
+    const hamburger = document.querySelector('.hamburger');
+
+    mobileMenu.classList.remove('active');
+    hamburger.classList.remove('active');
+
+    // Prevent default anchor behavior
+    if (event) {
+        event.preventDefault();
+        
+        const targetElement = event.target.closest('a');
+        if (targetElement) {
+            const path = targetElement.dataset.path;
+            const targetId = targetElement.getAttribute('href').substring(1);
+            const section = document.getElementById(targetId);
+
+            if (section) {
+                // Update the URL without reloading the page
+                window.history.pushState({}, '', path);
+
+                // Manually scroll to the section
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }
+}
