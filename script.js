@@ -117,6 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
         { "id": 61, "name": "shoot", "description": "shoot a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
         { "id": 61, "name": "tickle", "description": "tickle a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
         { "id": 61, "name": "bite", "description": "bite a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+        { "id": 61, "name": "banner", "description": "Get a member's banner.", "arguments": ["member"], "permissions": ["none"], "category": "information" },
+        { "id": 61, "name": "servericon", "description": "Get server icon", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+        { "id": 61, "name": "serverbanner", "description": "Get server banner", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+        { "id": 61, "name": "splash", "description": "Get server splash", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+        { "id": 61, "name": "setsplash", "description": "set a server splash", "arguments": ["image"], "permissions": ["manage_guild"], "category": "server" },
+        { "id": 61, "name": "setbanner", "description": "set a server banner", "arguments": ["image"], "permissions": ["manage_guild"], "category": "server" },
+        { "id": 61, "name": "seticon", "description": "set a server icon", "arguments": ["image"], "permissions": ["manage_guild"], "category": "server" },
+        { "id": 61, "name": "firstmessage", "description": "jump to firstmessage", "arguments": ["channel"], "permissions": ["none"], "category": "server" },
+        { "id": 61, "name": "webhooks", "description": "list all webhooks in guild", "arguments": ["none"], "permissions": ["manage_webhooks"], "category": "server" },
 
         { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" }
     ];
@@ -238,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCommands(activeCategory, searchInput.value);
     });
 });
+
 
 
 
