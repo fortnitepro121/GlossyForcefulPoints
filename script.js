@@ -209,7 +209,7 @@ function renderCommands(filterCategory = 'all', searchTerm = '') {
 
         commandCard.innerHTML = `
             <button class="copy-btn" onclick="copyCommand('${command.name}')"><i class="fas fa-copy"></i></button>
-            <p class="command-name">!<span>${command.name}</span></p>
+            <p class="command-name">,<span>${command.name}</span></p>
             <p class="command-description">${command.description}</p>
             <div class="command-details">
                 <div class="detail-group">
@@ -456,4 +456,5 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
