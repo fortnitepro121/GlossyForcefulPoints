@@ -48,7 +48,6 @@ const commandsData = [
     { "id": 4, "name": "boosterrole color", "description": "Change the color of your booster role.", "arguments": ["new color"], "permissions": ["booster"], "category": "server" },
     { "id": 5, "name": "boosterrole icon", "description": "Change the icon of your booster role.", "arguments": ["new icon"], "permissions": ["booster"], "category": "server" },
     { "id": 6, "name": "boosterrole create", "description": "Create a booster role with a custom name and color.", "arguments": ["name", "color"], "permissions": ["booster"], "category": "server" },
-[
     { "id": 7, "name": "welcome", "description": "Configure the server's welcome system.", "arguments": ["none"], "permissions": ["manage_server"], "category": "server" },
     { "id": 8, "name": "welcome add", "description": "Add a new welcome message or embed for new members.", "arguments": ["channel", "message_or_json"], "permissions": ["manage_server"], "category": "welcome" },
     { "id": 9, "name": "welcome remove", "description": "Remove a specific welcome message by its index.", "arguments": ["index"], "permissions": ["manage_server"], "category": "welcome" },
@@ -536,6 +535,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
