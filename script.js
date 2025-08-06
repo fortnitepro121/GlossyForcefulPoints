@@ -86,7 +86,42 @@ const commandsData = [
     { "id": 39, "name": "snipe", "description": "Retrieve the last deleted message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
     { "id": 39, "name": "editsnipe", "description": "Retrieve the last edited message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
     { "id": 39, "name": "reactionsnipe", "description": "Retrieve the last deleted reaction.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
-
+    { "id": 23, "name": "8ball", "description": "Answers a yes/no question.", "arguments": ["question"], "permissions": ["none"], "category": "fun" },
+    { "id": 24, "name": "meme", "description": "Fetches a random meme from the internet.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 25, "name": "joke", "description": "Tells a random joke.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 26, "name": "fact", "description": "Provides a random fact.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 27, "name": "wyr", "description": "Asks a random 'Would You Rather' question.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 28, "name": "truth", "description": "Provides a truth question.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 29, "name": "dare", "description": "Provides a dare.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 30, "name": "howgay", "description": "Calculates a member's 'gayness'.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 31, "name": "ship", "description": "Calculates compatibility between two members and gives a ship name.", "arguments": ["member1", "member2"], "permissions": ["none"], "category": "fun" },
+    { "id": 32, "name": "hug", "description": "Sends a hug GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 33, "name": "pat", "description": "Sends a pat GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 34, "name": "slap", "description": "Sends a slap GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 35, "name": "kiss", "description": "Sends a kiss GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 36, "name": "cuddle", "description": "Sends a cuddle GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 37, "name": "punch", "description": "Sends a punch GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 38, "name": "lick", "description": "Sends a lick GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 39, "name": "feed", "description": "Sends a feed GIF to a member.", "arguments": ["member"], "permissions": ["none"], "category": "fun" },
+    { "id": 40, "name": "f", "description": "Pay respects to a member or thing. Also has an alias `respects`.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 41, "name": "ascii", "description": "Converts text to ASCII art.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 42, "name": "reverse", "description": "Reverses the provided text.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 43, "name": "emojify", "description": "Converts text into regional indicator emojis.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 44, "name": "bigtext", "description": "Converts text into large, 'big' text using emojis.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 45, "name": "owo", "description": "Owo-fies the provided text.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 46, "name": "clap", "description": "Adds clapping hands emojis between each word.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 47, "name": "say", "description": "Makes the bot say something and deletes your command message.", "arguments": ["text"], "permissions": ["manage_messages"], "category": "fun" },
+    { "id": 48, "name": "echo", "description": "Makes the bot repeat your message.", "arguments": ["text"], "permissions": ["none"], "category": "fun" },
+    { "id": 49, "name": "cat", "description": "Fetches a random cat image.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 50, "name": "dog", "description": "Fetches a random dog image.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 51, "name": "inspire", "description": "Fetches a random inspirational quote.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 52, "name": "qotd", "description": "Fetches the quote of the day.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 53, "name": "urban", "description": "Searches Urban Dictionary for a word's definition.", "arguments": ["word"], "permissions": ["none"], "category": "fun" },
+    { "id": 54, "name": "copypasta", "description": "Fetches a random copypasta from Reddit.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 55, "name": "dadjoke", "description": "Tells a random dad joke.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 56, "name": "chucknorris", "description": "Fetches a random Chuck Norris joke.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 57, "name": "catfact", "description": "Provides a random fact about cats.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
+    { "id": 58, "name": "dogfact", "description": "Provides a random fact about dogs.", "arguments": ["none"], "permissions": ["none"], "category": "fun" },
     { "id": 40, "name": "clearsnipe", "description": "Clear all sniped messages or images.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "utility" },
     { "id": 41, "name": "crypto", "description": "Check the current price of a cryptocurrency.", "arguments": ["crypto"], "permissions": ["manage_messages"], "category": "information" },
     { "id": 42, "name": "lock", "description": "Lock a channel to prevent members from sending messages.", "arguments": ["none"], "permissions": ["manage_channels"], "category": "moderation" },
@@ -459,6 +494,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
