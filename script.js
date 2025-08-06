@@ -51,6 +51,8 @@ const commandsData = [
     { "id": 7, "name": "welcome", "description": "Configure the server's welcome system.", "arguments": ["none"], "permissions": ["manager_server"], "category": "server" },
     { "id": 8, "name": "welcome set message", "description": "Set a custom welcome message for new members.", "arguments": ["message"], "permissions": ["manager_server"], "category": "welcome" },
     { "id": 9, "name": "welcome set channel", "description": "Choose the channel where welcome messages are sent.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "welcome" },
+    { "id": 9, "name": "welcome set dm", "description": "Set a custom welcome DM for new members.", "arguments": ["<message/JSON>"], "permissions": ["manager_server"], "category": "welcome" },
+
     { "id": 10, "name": "welcome set embed", "description": "Set a custom embed for the welcome message using JSON.", "arguments": ["json_embed"], "permissions": ["manager_server"], "category": "welcome" },
     { "id": 11, "name": "welcome set joinrole", "description": "Assign a role to new members when they join.", "arguments": ["role"], "permissions": ["manager_server"], "category": "welcome" },
     { "id": 12, "name": "welcome view", "description": "View the current welcome message configuration.", "arguments": ["none"], "permissions": ["manager_server"], "category": "welcome" },
@@ -528,6 +530,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
