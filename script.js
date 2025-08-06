@@ -48,14 +48,21 @@ const commandsData = [
     { "id": 4, "name": "boosterrole color", "description": "Change the color of your booster role.", "arguments": ["new color"], "permissions": ["booster"], "category": "server" },
     { "id": 5, "name": "boosterrole icon", "description": "Change the icon of your booster role.", "arguments": ["new icon"], "permissions": ["booster"], "category": "server" },
     { "id": 6, "name": "boosterrole create", "description": "Create a booster role with a custom name and color.", "arguments": ["name", "color"], "permissions": ["booster"], "category": "server" },
-    { "id": 7, "name": "welcome", "description": "Configure the server's welcome system.", "arguments": ["none"], "permissions": ["manager_server"], "category": "server" },
-    { "id": 8, "name": "welcome set message", "description": "Set a custom welcome message for new members.", "arguments": ["message"], "permissions": ["manager_server"], "category": "welcome" },
-    { "id": 9, "name": "welcome set channel", "description": "Choose the channel where welcome messages are sent.", "arguments": ["channel"], "permissions": ["manager_server"], "category": "welcome" },
-    { "id": 9, "name": "welcome set dm", "description": "Set a custom welcome DM for new members.", "arguments": ["message","json_embed"], "permissions": ["manager_server"], "category": "welcome" },
-
-    { "id": 10, "name": "welcome set embed", "description": "Set a custom embed for the welcome message using JSON.", "arguments": ["json_embed"], "permissions": ["manager_server"], "category": "welcome" },
-    { "id": 11, "name": "welcome set joinrole", "description": "Assign a role to new members when they join.", "arguments": ["role"], "permissions": ["manager_server"], "category": "welcome" },
-    { "id": 12, "name": "welcome view", "description": "View the current welcome message configuration.", "arguments": ["none"], "permissions": ["manager_server"], "category": "welcome" },
+[
+    { "id": 7, "name": "welcome", "description": "Configure the server's welcome system.", "arguments": ["none"], "permissions": ["manage_server"], "category": "server" },
+    { "id": 8, "name": "welcome add", "description": "Add a new welcome message or embed for new members.", "arguments": ["channel", "message_or_json"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 9, "name": "welcome remove", "description": "Remove a specific welcome message by its index.", "arguments": ["index"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 10, "name": "welcome clear", "description": "Clear all configured welcome messages.", "arguments": ["none"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 11, "name": "welcome set channel", "description": "Choose the channel where welcome messages are sent.", "arguments": ["channel"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 12, "name": "welcome set dm", "description": "Set a custom welcome DM for new members. Use 'none' to disable.", "arguments": ["message_or_json"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 13, "name": "welcome set joinrole", "description": "Assign a role to new members when they join.", "arguments": ["role"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 14, "name": "welcome view", "description": "View the current welcome message configuration.", "arguments": ["none"], "permissions": ["manage_server"], "category": "welcome" },
+    { "id": 15, "name": "autorole", "description": "Configure automatic roles for new members.", "arguments": ["none"], "permissions": ["manage_roles"], "category": "server" },
+    { "id": 16, "name": "autorole set", "description": "Add a role to the list of roles automatically assigned to new members.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "autorole" },
+    { "id": 17, "name": "autorole remove", "description": "Remove a role from the auto-role list.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "autorole" },
+    { "id": 18, "name": "autorole list", "description": "List all roles currently set for auto-assignment.", "arguments": ["none"], "permissions": ["manage_roles"], "category": "autorole" },
+    { "id": 19, "name": "autorole clear", "description": "Clear all roles from the auto-role list.", "arguments": ["none"], "permissions": ["manage_roles"], "category": "autorole" }
+]
     { "id": 13, "name": "autoresponder", "description": "Manage automatic responses to user messages.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "utility" },
     { "id": 14, "name": "autoresponder add", "description": "Add a new autoresponder with a trigger and response.", "arguments": ["trigger", "response"], "permissions": ["manage_messages"], "category": "utility" },
     { "id": 15, "name": "autoresponder delete", "description": "Delete an existing autoresponder by trigger word.", "arguments": ["trigger"], "permissions": ["manage_messages"], "category": "utility" },
@@ -530,6 +537,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
