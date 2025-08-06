@@ -20,7 +20,19 @@ const commandsData = [
     { "id": 24, "name": "invoke dm kick", "description": "Set the private DM for a kick. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 25, "name": "invoke dm timeout", "description": "Set the private DM for a timeout. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 26, "name": "invoke view", "description": "View the current custom messages and DMs for a moderation action.", "arguments": ["action"], "permissions": ["manage_guild"], "category": "server" },
-    { "id": 27, "name": "invoke variables", "description": "View all available placeholders for custom messages and DMs.", "arguments": [], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 1, "name": "emoji", "description": "A group of commands for managing emojis.", "arguments": ["<subcommand>"], "permissions": ["none"], "category": "server" },
+    { "id": 2, "name": "emoji steal", "description": "Steals one or more emojis from other servers.", "arguments": ["<emojis>"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 3, "name": "emoji add", "description": "Adds an emoji from a provided image URL.", "arguments": ["<url>", "<name>"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 4, "name": "emoji list", "description": "Lists all custom emojis on the server.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+    { "id": 5, "name": "emoji remove", "description": "Removes one or more emojis from the server.", "arguments": ["<emojis>"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 6, "name": "emoji removedupes", "description": "Removes duplicate emojis from the server.", "arguments": ["none"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 7, "name": "sticker", "description": "A group of commands for managing stickers.", "arguments": ["<subcommand>"], "permissions": ["none"], "category": "server" },
+    { "id": 8, "name": "sticker add", "description": "Adds a sticker from a provided image URL or attachment.", "arguments": ["<url>", "<name>", "<description>"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 9, "name": "sticker steal", "description": "Steals a sticker from another server using its ID.", "arguments": ["<sticker_id>"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 10, "name": "sticker list", "description": "Lists all custom stickers on the server.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+    { "id": 11, "name": "sticker remove", "description": "Removes one or more stickers by name or ID.", "arguments": ["<stickers>"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 12, "name": "sticker removedupes", "description": "Removes duplicate stickers from the server.", "arguments": ["none"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 27, "name": "invoke variables", "description": "View all available placeholders for custom messages and DMs.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 5, "name": "boosters", "description": "List all server boosts", "arguments": ["none"], "permissions": ["none"], "category": "server" },
     { "id": 5, "name": "joined", "description": "Show when user joined", "arguments": ["member"], "permissions": ["none"], "category": "server" },
     { "id": 5, "name": "joins", "description": "Show Recent joins", "arguments": ["none"], "permissions": ["none"], "category": "server" },
@@ -534,6 +546,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
