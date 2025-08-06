@@ -28,7 +28,7 @@ const commandsData = [
     { "id": 6, "name": "emoji removedupes", "description": "Removes duplicate emojis from the server.", "arguments": ["none"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
     { "id": 7, "name": "sticker", "description": "A group of commands for managing stickers.", "arguments": ["subcommand"], "permissions": ["none"], "category": "server" },
     { "id": 8, "name": "sticker add", "description": "Adds a sticker from a provided image URL or attachment.", "arguments": ["url", "name", "description"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
-    { "id": 9, "name": "sticker steal", "description": "Steals a sticker from another server using its ID.", "arguments": ["sticker_id"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
+    { "id": 9, "name": "sticker steal", "description": "Steals a sticker from another server using its ID.", "arguments": ["sticker"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
     { "id": 10, "name": "sticker list", "description": "Lists all custom stickers on the server.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
     { "id": 11, "name": "sticker remove", "description": "Removes one or more stickers by name or ID.", "arguments": ["stickers"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
     { "id": 12, "name": "sticker removedupes", "description": "Removes duplicate stickers from the server.", "arguments": ["none"], "permissions": ["manage_emojis_and_stickers"], "category": "server" },
@@ -546,6 +546,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
