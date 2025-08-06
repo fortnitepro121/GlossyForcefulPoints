@@ -186,7 +186,6 @@ const commandsData = [
     { "id": 79, "name": "playlist play", "description": "Plays a saved playlist.", "arguments": ["name"], "permissions": ["none"], "category": "music" },
     { "id": 80, "name": "playlist list", "description": "Lists your saved playlists.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
     { "id": 81, "name": "playlist delete", "description": "Deletes a playlist.", "arguments": ["name"], "permissions": ["none"], "category": "music" }
-]
 ];
 
 
@@ -518,6 +517,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
