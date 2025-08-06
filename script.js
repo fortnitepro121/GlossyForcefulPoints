@@ -10,6 +10,17 @@ const commandsData = [
     { "id": 5, "name": "analytics roles", "description": "List roles's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
     { "id": 5, "name": "analytics activity (COMING SOON)", "description": "List activty's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
     { "id": 5, "name": "quote", "description": "Quote's a member's message", "arguments": ["none"], "permissions": ["manage_messages"], "category": "server" },
+    { "id": 17, "name": "invoke", "description": "The main command for customizing bot messages.", "arguments": [], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 18, "name": "invoke message ban", "description": "Set the public message for a ban. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 19, "name": "invoke message kick", "description": "Set the public message for a kick. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 20, "name": "invoke message jail", "description": "Set the public message for a jail action. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 21, "name": "invoke message unmute", "description": "Set the public message for an unmute action. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 22, "name": "invoke message timeout", "description": "Set the public message for a timeout. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 23, "name": "invoke dm ban", "description": "Set the private DM for a ban. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 24, "name": "invoke dm kick", "description": "Set the private DM for a kick. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 25, "name": "invoke dm timeout", "description": "Set the private DM for a timeout. Use `None` to reset.", "arguments": ["message/JSON"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 26, "name": "invoke view", "description": "View the current custom messages and DMs for a moderation action.", "arguments": ["action"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 27, "name": "invoke variables", "description": "View all available placeholders for custom messages and DMs.", "arguments": [], "permissions": ["manage_guild"], "category": "server" },
     { "id": 5, "name": "boosters", "description": "List all server boosts", "arguments": ["none"], "permissions": ["none"], "category": "server" },
     { "id": 5, "name": "joined", "description": "Show when user joined", "arguments": ["member"], "permissions": ["none"], "category": "server" },
     { "id": 5, "name": "joins", "description": "Show Recent joins", "arguments": ["none"], "permissions": ["none"], "category": "server" },
@@ -517,6 +528,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
