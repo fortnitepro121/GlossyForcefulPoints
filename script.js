@@ -84,7 +84,10 @@ const commandsData = [
     { "id": 38, "name": "jaillist", "description": "List all members who are jailed", "arguments": ["none"], "permissions": ["none"], "category": "moderation" },
     { "id": 38, "name": "modhistory", "description": "View a mod's actions", "arguments": ["member"], "permissions": ["administrator"], "category": "moderation" },
     { "id": 39, "name": "snipe", "description": "Retrieve the last deleted message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
-    { "id": 40, "name": "clearsnipe", "description": "Clear all sniped messages or images.", "arguments": ["none"], "permissions": ["none"], "category": "utility" },
+    { "id": 39, "name": "editsnipe", "description": "Retrieve the last edited message or image.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
+    { "id": 39, "name": "reactionsnipe", "description": "Retrieve the last deleted reaction.", "arguments": ["index"], "permissions": ["none"], "category": "utility" },
+
+    { "id": 40, "name": "clearsnipe", "description": "Clear all sniped messages or images.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "utility" },
     { "id": 41, "name": "crypto", "description": "Check the current price of a cryptocurrency.", "arguments": ["crypto"], "permissions": ["manage_messages"], "category": "information" },
     { "id": 42, "name": "lock", "description": "Lock a channel to prevent members from sending messages.", "arguments": ["none"], "permissions": ["manage_channels"], "category": "moderation" },
     { "id": 43, "name": "unlock", "description": "Unlock a channel to allow messages again.", "arguments": ["none"], "permissions": ["manage_channels"], "category": "moderation" },
@@ -456,5 +459,6 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
