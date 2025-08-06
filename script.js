@@ -61,8 +61,7 @@ const commandsData = [
     { "id": 16, "name": "autorole set", "description": "Add a role to the list of roles automatically assigned to new members.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "autorole" },
     { "id": 17, "name": "autorole remove", "description": "Remove a role from the auto-role list.", "arguments": ["role"], "permissions": ["manage_roles"], "category": "autorole" },
     { "id": 18, "name": "autorole list", "description": "List all roles currently set for auto-assignment.", "arguments": ["none"], "permissions": ["manage_roles"], "category": "autorole" },
-    { "id": 19, "name": "autorole clear", "description": "Clear all roles from the auto-role list.", "arguments": ["none"], "permissions": ["manage_roles"], "category": "autorole" }
-]
+    { "id": 19, "name": "autorole clear", "description": "Clear all roles from the auto-role list.", "arguments": ["none"], "permissions": ["manage_roles"], "category": "autorole" },
     { "id": 13, "name": "autoresponder", "description": "Manage automatic responses to user messages.", "arguments": ["none"], "permissions": ["manage_messages"], "category": "utility" },
     { "id": 14, "name": "autoresponder add", "description": "Add a new autoresponder with a trigger and response.", "arguments": ["trigger", "response"], "permissions": ["manage_messages"], "category": "utility" },
     { "id": 15, "name": "autoresponder delete", "description": "Delete an existing autoresponder by trigger word.", "arguments": ["trigger"], "permissions": ["manage_messages"], "category": "utility" },
@@ -537,6 +536,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
