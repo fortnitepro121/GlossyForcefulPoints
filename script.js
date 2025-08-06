@@ -7,13 +7,16 @@ const commandsData = [
     { "id": 5, "name": "analytics", "description": "List all server analytics commmands.", "arguments": ["new icon"], "permissions": ["administrator"], "category": "server" },
     { "id": 5, "name": "analytics members", "description": "List member's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
     { "id": 20, "name": "level", "description": "View your current level and XP progress.", "arguments": ["none"], "permissions": ["none"], "category": "leveling" },
+    { "id": 20, "name": "level", "description": "View your current level and XP progress.", "arguments": ["member (optional)"], "permissions": ["none"], "category": "leveling" },
     { "id": 21, "name": "level help", "description": "Display all commands for the leveling system.", "arguments": ["none"], "permissions": ["none"], "category": "leveling" },
     { "id": 22, "name": "level message", "description": "Set a custom level-up message or embed for a specific channel.", "arguments": ["channel", "message_or_json"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 23, "name": "level message remove", "description": "Remove the level-up message configured for a specific channel.", "arguments": ["channel"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 24, "name": "level enable", "description": "Enable the leveling system for your server.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 25, "name": "level disable", "description": "Disable the leveling system for your server.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 26, "name": "level leaderboard", "description": "Show the server's level leaderboard.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
-    { "id": 27, "name": "level view", "description": "View current leveling system settings.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 27, "name": "level add", "description": "Manually add XP or levels to a member.", "arguments": ["member", "xp (optional)", "level (optional)"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 28, "name": "level reset", "description": "Reset a member's or all members' levels and XP.", "arguments": ["member (optional)"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 29, "name": "level view", "description": "View current leveling system settings.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 5, "name": "analytics channels", "description": "List channel's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
     { "id": 5, "name": "analytics roles", "description": "List roles's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
     { "id": 5, "name": "analytics activity (COMING SOON)", "description": "List activty's analytics.", "arguments": ["none"], "permissions": ["administrator"], "category": "server" },
@@ -554,6 +557,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
