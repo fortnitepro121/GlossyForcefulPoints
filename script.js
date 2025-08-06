@@ -162,7 +162,31 @@ const commandsData = [
     { "id": 61, "name": "seticon", "description": "set a server icon", "arguments": ["image"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 61, "name": "firstmessage", "description": "jump to firstmessage", "arguments": ["channel"], "permissions": ["none"], "category": "server" },
     { "id": 61, "name": "webhooks", "description": "list all webhooks in guild", "arguments": ["none"], "permissions": ["manage_webhooks"], "category": "server" },
-    { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" }
+    { "id": 62, "name": "prefix self", "description": "A special command to change your personal prefix.", "arguments": ["prefix"], "permissions": ["none"], "category": "utility" },
+    { "id": 59, "name": "play", "description": "Plays a song from a URL or searches for one.", "arguments": ["URL/query"], "permissions": ["none"], "category": "music" },
+    { "id": 60, "name": "pause", "description": "Pauses the current song.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 61, "name": "resume", "description": "Resumes the paused song.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 62, "name": "skip", "description": "Skips the current song.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 63, "name": "stop", "description": "Stops the music and clears the queue.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 64, "name": "queue", "description": "Displays the current song queue.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 65, "name": "volume", "description": "Sets the playback volume.", "arguments": ["level"], "permissions": ["none"], "category": "music" },
+    { "id": 66, "name": "nowplaying", "description": "Shows the currently playing song.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 67, "name": "loop", "description": "Toggles looping for the current song.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 68, "name": "loopqueue", "description": "Toggles looping for the entire queue.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 69, "name": "shuffle", "description": "Shuffles the queue.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 70, "name": "remove", "description": "Removes a song from the queue by its index.", "arguments": ["index"], "permissions": ["none"], "category": "music" },
+    { "id": 71, "name": "clearqueue", "description": "Clears the entire queue.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 72, "name": "leave", "description": "Makes the bot leave the voice channel.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 73, "name": "join", "description": "Makes the bot join your voice channel.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 74, "name": "search", "description": "Searches for songs and lets you select.", "arguments": ["query"], "permissions": ["none"], "category": "music" },
+    { "id": 75, "name": "lyrics", "description": "Fetches lyrics for a song.", "arguments": ["song title"], "permissions": ["none"], "category": "music" },
+    { "id": 76, "name": "playlist create", "description": "Creates a new playlist.", "arguments": ["name"], "permissions": ["none"], "category": "music" },
+    { "id": 77, "name": "playlist add", "description": "Adds a song to a playlist.", "arguments": ["name", "URL/query"], "permissions": ["none"], "category": "music" },
+    { "id": 78, "name": "playlist remove", "description": "Removes a song from a playlist.", "arguments": ["name", "index"], "permissions": ["none"], "category": "music" },
+    { "id": 79, "name": "playlist play", "description": "Plays a saved playlist.", "arguments": ["name"], "permissions": ["none"], "category": "music" },
+    { "id": 80, "name": "playlist list", "description": "Lists your saved playlists.", "arguments": ["none"], "permissions": ["none"], "category": "music" },
+    { "id": 81, "name": "playlist delete", "description": "Deletes a playlist.", "arguments": ["name"], "permissions": ["none"], "category": "music" }
+]
 ];
 
 
@@ -494,6 +518,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
