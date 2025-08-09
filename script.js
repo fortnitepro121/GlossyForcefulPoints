@@ -11,6 +11,12 @@ const commandsData = [
     { "id": 21, "name": "level help", "description": "Display all commands for the leveling system.", "arguments": ["none"], "permissions": ["none"], "category": "leveling" },
     { "id": 22, "name": "level message", "description": "Set a custom level-up message or embed for a specific channel.", "arguments": ["channel", "message_or_json"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 22, "name": "embedhelp", "description": "how to use the embed module for invoke,welcome,boost.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
+    { "id": 101, "name": "boost", "description": "View or manage the boost thank-you message and channel.", "arguments": ["subcommand"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 102, "name": "boost config", "description": "View the current boost message configuration, including channel and content.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 103, "name": "boost add", "description": "Set the boost message channel and content.", "arguments": ["channel", "message_or_embed"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 104, "name": "boost delete", "description": "Remove the custom boost message and channel.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 105, "name": "boost view", "description": "View the current boost message and a live preview.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 106, "name": "boost clear", "description": "Reset the boost message content but keep the channel.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
 
     { "id": 23, "name": "level message remove", "description": "Remove the level-up message configured for a specific channel.", "arguments": ["channel"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 24, "name": "level enable", "description": "Enable the leveling system for your server.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
@@ -559,6 +565,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
