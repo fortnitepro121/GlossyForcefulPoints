@@ -17,7 +17,12 @@ const commandsData = [
     { "id": 104, "name": "boost delete", "description": "Remove the custom boost message and channel.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 105, "name": "boost view", "description": "View the current boost message and a live preview.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 106, "name": "boost clear", "description": "Reset the boost message content but keep the channel.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
-
+    { "id": 11, "name": "goodbye", "description": "Manage goodbye messages for the server.", "arguments": ["subcommand"], "permissions": ["manage_channels"], "category": "welcome" },
+    { "id": 12, "name": "goodbye add", "description": "Add a new goodbye message for a specific channel.", "arguments": ["channel", "message_or_embed"], "permissions": ["manage_channels"], "category": "welcome" },
+    { "id": 13, "name": "goodbye remove", "description": "Remove a goodbye message from a specific channel.", "arguments": ["channel"], "permissions": ["manage_channels"], "category": "welcome" },
+    { "id": 14, "name": "goodbye clear", "description": "Clear all configured goodbye messages.", "arguments": ["none"], "permissions": ["manage_channels"], "category": "welcome" },
+    { "id": 15, "name": "goodbye variables", "description": "List all available variables for goodbye messages.", "arguments": ["none"], "permissions": ["manage_channels"], "category": "welcome" },
+    { "id": 16, "name": "goodbye view", "description": "View all configured goodbye messages and their previews.", "arguments": ["none"], "permissions": ["manage_channels"], "category": "welcome" },
     { "id": 23, "name": "level message remove", "description": "Remove the level-up message configured for a specific channel.", "arguments": ["channel"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 24, "name": "level enable", "description": "Enable the leveling system for your server.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 25, "name": "level disable", "description": "Disable the leveling system for your server.", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
@@ -565,6 +570,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
