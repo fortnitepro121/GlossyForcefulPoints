@@ -9,6 +9,9 @@ const commandsData = [
     { "id": 20, "name": "level", "description": "View your current level and XP progress.", "arguments": ["none"], "permissions": ["none"], "category": "leveling" },
     { "id": 20, "name": "level", "description": "View your current level and XP progress.", "arguments": ["member (optional)"], "permissions": ["none"], "category": "leveling" },
     { "id": 21, "name": "level help", "description": "Display all commands for the leveling system.", "arguments": ["none"], "permissions": ["none"], "category": "leveling" },
+    { "id": 21, "name": "toggle snipe", "description": "Toggle snipe on/off", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
+    { "id": 21, "name": "server config", "description": "see your current server config", "arguments": ["none"], "permissions": ["manage_guild"], "category": "server" },
+
     { "id": 22, "name": "level message", "description": "Set a custom level-up message or embed for a specific channel.", "arguments": ["channel", "message_or_json"], "permissions": ["manage_guild"], "category": "server" },
     { "id": 22, "name": "embedhelp", "description": "how to use the embed module for invoke,welcome,boost.", "arguments": ["none"], "permissions": ["none"], "category": "server" },
     { "id": 101, "name": "boost", "description": "View or manage the boost thank-you message and channel.", "arguments": ["subcommand"], "permissions": ["manage_guild"], "category": "server" },
@@ -570,6 +573,7 @@ function hideMobileMenu(event) {
         }
     }
 }
+
 
 
 
