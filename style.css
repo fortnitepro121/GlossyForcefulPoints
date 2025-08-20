@@ -1,3 +1,4 @@
+
 /* General Styles */
 :root {
     --primary-color: #ffffff;
@@ -1017,4 +1018,46 @@ body::before {
     .invite .large-btn {
         width: auto;
     }
+}
+/* Privacy Policy Page Styles */
+.privacy-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.privacy-container h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px var(--highlight-color);
+}
+
+.privacy-container h2 {
+    font-size: 1.8rem;
+    color: var(--highlight-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.privacy-container p, .privacy-container li {
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+    line-height: 1.8;
+}
+
+.privacy-container ul {
+    margin-left: 2rem;
+    list-style-type: '⚡️ ';
+}
+
+.privacy-container li strong {
+    color: var(--text-color);
 }
